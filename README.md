@@ -1,3 +1,3 @@
 # ThirdPartyLibraries
 
-Third party libraries (GEN dependencies)
+Third Party Libraries (GEN Dependendies)

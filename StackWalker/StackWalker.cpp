@@ -557,7 +557,7 @@ private:
       return FALSE;
     }
 
-    hMods = (HMODULE*) malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof HMODULE));
+    hMods = (HMODULE*) malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof(HMODULE)));
     tt = (char*) malloc(sizeof(char) * TTBUFLEN);
     tt2 = (char*) malloc(sizeof(char) * TTBUFLEN);
     if ( (hMods == NULL) || (tt == NULL) || (tt2 == NULL) )
@@ -970,7 +970,7 @@ BOOL StackWalker::ShowCallstack(HANDLE hThread, const CONTEXT *context, PReadPro
   s.AddrStack.Offset = c.IntSp;
   s.AddrStack.Mode = AddrModeFlat;
 #else
-#error "Platform not supported!"
+//#error "Platform not supported!"
 #endif
 
   pSym = (IMAGEHLP_SYMBOL64 *) malloc(sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN);

@@ -2462,7 +2462,9 @@ public:
   HRESULT Create(_In_z_ LPCWSTR pszContent)
   {
 
-     HRESULT _hr = RoInitialize(RO_INIT_MULTITHREADED);
+    // HRESULT _hr = RoInitialize(RO_INIT_MULTITHREADED);
+
+    RoInitialize(RO_INIT_MULTITHREADED);
 
     //Create the XML document for the toast
     ComPtr<IXmlDocument> xml;

@@ -160,7 +160,7 @@ jpeg_finish_compress (j_compress_ptr cinfo)
       cinfo->global_state == CSTATE_RAW_OK) {
     /* Terminate first pass */
     if (cinfo->next_scanline < cinfo->image_height)
-      ERREXIT(cinfo, JERR_TOO_LITTLE_TICKET);
+      ERREXIT(cinfo, JERR_TOO_LITTLE_DATA);
     (*cinfo->master->finish_pass) (cinfo);
   } else if (cinfo->global_state != CSTATE_WRCOEFS)
     ERREXIT1(cinfo, JERR_BAD_STATE, cinfo->global_state);

@@ -823,7 +823,7 @@ namespace agg
     {
         if(m_cur_face && m_name)
         {
-            unsigned name_len = strlen(m_name);
+            unsigned name_len = (unsigned int)strlen(m_name);
             if(name_len > m_name_len)
             {
                 delete [] m_signature;

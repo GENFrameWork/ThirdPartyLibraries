@@ -69,7 +69,7 @@ namespace agg
         //--------------------------------------------------------------------
         void signature(const char* font_signature)
         {
-            m_font_signature = (char*)m_allocator.allocate(strlen(font_signature) + 1);
+            m_font_signature = (char*)m_allocator.allocate((unsigned int)strlen(font_signature) + 1);
             strcpy(m_font_signature, font_signature);
             memset(m_glyphs, 0, sizeof(m_glyphs));
         }

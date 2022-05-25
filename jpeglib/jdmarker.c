@@ -2,7 +2,7 @@
  * jdmarker.c
  *
  * Copyright (C) 1991-1998, Thomas G. Lane.
- * Modified 2009-2013 by Guido Vollbeding.
+ * Modified 2009-2019 by Guido Vollbeding.
  * This file is part of the Independent JPEG Group's software.
  * For conditions of distribution and use, see the accompanying README file.
  *
@@ -496,8 +496,6 @@ get_dht (j_decompress_ptr cinfo)
     if (count > 256 || ((INT32) count) > length)
       ERREXIT(cinfo, JERR_BAD_HUFF_TABLE);
 
-    MEMZERO(huffval, SIZEOF(huffval)); /* pre-zero array for later copy */
-
     for (i = 0; i < count; i++)
       INPUT_BYTE(cinfo, huffval[i], return FALSE);
 
@@ -517,7 +515,8 @@ get_dht (j_decompress_ptr cinfo)
       *htblptr = jpeg_alloc_huff_table((j_common_ptr) cinfo);
   
     MEMCOPY((*htblptr)->bits, bits, SIZEOF((*htblptr)->bits));
-    MEMCOPY((*htblptr)->huffval, huffval, SIZEOF((*htblptr)->huffval));
+    if (count > 0)
+      MEMCOPY((*htblptr)->huffval, huffval, count * SIZEOF(UINT8));
   }
 
   if (length != 0)
@@ -577,14 +576,14 @@ get_dqt (j_decompress_ptr cinfo)
 	count = DCTSIZE2;
     }
 
-    switch (count) {
+    switch ((int) count) {
     case (2*2): natural_order = jpeg_natural_order2; break;
     case (3*3): natural_order = jpeg_natural_order3; break;
     case (4*4): natural_order = jpeg_natural_order4; break;
     case (5*5): natural_order = jpeg_natural_order5; break;
     case (6*6): natural_order = jpeg_natural_order6; break;
     case (7*7): natural_order = jpeg_natural_order7; break;
-    default:    natural_order = jpeg_natural_order;  break;
+    default:    natural_order = jpeg_natural_order;
     }
 
     for (i = 0; i < count; i++) {
@@ -711,9 +710,9 @@ get_lse (j_decompress_ptr cinfo)
  * JFIF and Adobe markers, respectively.
  */
 
-#define APP0_TICKET_LEN	14	/* Length of interesting data in APP0 */
-#define APP14_TICKET_LEN	12	/* Length of interesting data in APP14 */
-#define APPN_TICKET_LEN	14	/* Must be the largest of the above!! */
+#define APP0_DATA_LEN	14	/* Length of interesting data in APP0 */
+#define APP14_DATA_LEN	12	/* Length of interesting data in APP14 */
+#define APPN_DATA_LEN	14	/* Must be the largest of the above!! */
 
 
 LOCAL(void)
@@ -726,7 +725,7 @@ examine_app0 (j_decompress_ptr cinfo, JOCTET FAR * data,
 {
   INT32 totallen = (INT32) datalen + remaining;
 
-  if (datalen >= APP0_TICKET_LEN &&
+  if (datalen >= APP0_DATA_LEN &&
       GETJOCTET(data[0]) == 0x4A &&
       GETJOCTET(data[1]) == 0x46 &&
       GETJOCTET(data[2]) == 0x49 &&
@@ -757,7 +756,7 @@ examine_app0 (j_decompress_ptr cinfo, JOCTET FAR * data,
     if (GETJOCTET(data[12]) | GETJOCTET(data[13]))
       TRACEMS2(cinfo, 1, JTRC_JFIF_THUMBNAIL,
 	       GETJOCTET(data[12]), GETJOCTET(data[13]));
-    totallen -= APP0_TICKET_LEN;
+    totallen -= APP0_DATA_LEN;
     if (totallen !=
 	((INT32)GETJOCTET(data[12]) * (INT32)GETJOCTET(data[13]) * (INT32) 3))
       TRACEMS1(cinfo, 1, JTRC_JFIF_BADTHUMBNAILSIZE, (int) totallen);
@@ -784,7 +783,6 @@ examine_app0 (j_decompress_ptr cinfo, JOCTET FAR * data,
     default:
       TRACEMS2(cinfo, 1, JTRC_JFIF_EXTENSION,
 	       GETJOCTET(data[5]), (int) totallen);
-      break;
     }
   } else {
     /* Start of APP0 does not match "JFIF" or "JFXX", or too short */
@@ -803,7 +801,7 @@ examine_app14 (j_decompress_ptr cinfo, JOCTET FAR * data,
 {
   unsigned int version, flags0, flags1, transform;
 
-  if (datalen >= APP14_TICKET_LEN &&
+  if (datalen >= APP14_DATA_LEN &&
       GETJOCTET(data[0]) == 0x41 &&
       GETJOCTET(data[1]) == 0x64 &&
       GETJOCTET(data[2]) == 0x6F &&
@@ -829,7 +827,7 @@ get_interesting_appn (j_decompress_ptr cinfo)
 /* Process an APP0 or APP14 marker without saving it */
 {
   INT32 length;
-  JOCTET b[APPN_TICKET_LEN];
+  JOCTET b[APPN_DATA_LEN];
   unsigned int i, numtoread;
   INPUT_VARS(cinfo);
 
@@ -837,8 +835,8 @@ get_interesting_appn (j_decompress_ptr cinfo)
   length -= 2;
 
   /* get the interesting part of the marker data */
-  if (length >= APPN_TICKET_LEN)
-    numtoread = APPN_TICKET_LEN;
+  if (length >= APPN_DATA_LEN)
+    numtoread = APPN_DATA_LEN;
   else if (length > 0)
     numtoread = (unsigned int) length;
   else
@@ -858,7 +856,6 @@ get_interesting_appn (j_decompress_ptr cinfo)
   default:
     /* can't get here unless jpeg_save_markers chooses wrong processor */
     ERREXIT1(cinfo, JERR_UNKNOWN_MARKER, cinfo->unread_marker);
-    break;
   }
 
   /* skip any remaining data -- could be lots */
@@ -964,7 +961,6 @@ save_marker (j_decompress_ptr cinfo)
   default:
     TRACEMS2(cinfo, 1, JTRC_MISC_MARKER, cinfo->unread_marker,
 	     (int) (data_length + length));
-    break;
   }
 
   /* skip any remaining data -- could be lots */
@@ -1043,7 +1039,7 @@ next_marker (j_decompress_ptr cinfo)
   }
 
   if (cinfo->marker->discarded_bytes != 0) {
-    WARNMS2(cinfo, JWRN_EXTRANEOUS_TICKET, cinfo->marker->discarded_bytes, c);
+    WARNMS2(cinfo, JWRN_EXTRANEOUS_DATA, cinfo->marker->discarded_bytes, c);
     cinfo->marker->discarded_bytes = 0;
   }
 
@@ -1240,7 +1236,6 @@ read_markers (j_decompress_ptr cinfo)
        * ought to change!
        */
       ERREXIT1(cinfo, JERR_UNKNOWN_MARKER, cinfo->unread_marker);
-      break;
     }
     /* Successfully processed marker, so reset state variable */
     cinfo->unread_marker = 0;
@@ -1416,9 +1411,8 @@ jinit_marker_reader (j_decompress_ptr cinfo)
   int i;
 
   /* Create subobject in permanent pool */
-  marker = (my_marker_ptr)
-    (*cinfo->mem->alloc_small) ((j_common_ptr) cinfo, JPOOL_PERMANENT,
-				SIZEOF(my_marker_reader));
+  marker = (my_marker_ptr) (*cinfo->mem->alloc_small)
+    ((j_common_ptr) cinfo, JPOOL_PERMANENT, SIZEOF(my_marker_reader));
   cinfo->marker = &marker->pub;
   /* Initialize public method pointers */
   marker->pub.reset_marker_reader = reset_marker_reader;
@@ -1468,10 +1462,10 @@ jpeg_save_markers (j_decompress_ptr cinfo, int marker_code,
   if (length_limit) {
     processor = save_marker;
     /* If saving APP0/APP14, save at least enough for our internal use. */
-    if (marker_code == (int) M_APP0 && length_limit < APP0_TICKET_LEN)
-      length_limit = APP0_TICKET_LEN;
-    else if (marker_code == (int) M_APP14 && length_limit < APP14_TICKET_LEN)
-      length_limit = APP14_TICKET_LEN;
+    if (marker_code == (int) M_APP0 && length_limit < APP0_DATA_LEN)
+      length_limit = APP0_DATA_LEN;
+    else if (marker_code == (int) M_APP14 && length_limit < APP14_DATA_LEN)
+      length_limit = APP14_DATA_LEN;
   } else {
     processor = skip_variable;
     /* If discarding APP0/APP14, use our regular on-the-fly processor. */

@@ -2,7 +2,7 @@
  * jerror.h
  *
  * Copyright (C) 1994-1997, Thomas G. Lane.
- * Modified 1997-2012 by Guido Vollbeding.
+ * Modified 1997-2018 by Guido Vollbeding.
  * This file is part of the Independent JPEG Group's software.
  * For conditions of distribution and use, see the accompanying README file.
  *
@@ -84,14 +84,14 @@ JMESSAGE(JERR_EOI_EXPECTED, "Didn't expect more than one scan")
 JMESSAGE(JERR_FILE_READ, "Input file read error")
 JMESSAGE(JERR_FILE_WRITE, "Output file write error --- out of disk space?")
 JMESSAGE(JERR_FRACT_SAMPLE_NOTIMPL, "Fractional sampling not implemented yet")
-JMESSAGE(JERR_HUFF_CLEN_OVERFLOW, "Huffman code size table overflow")
+JMESSAGE(JERR_HUFF_CLEN_OUTOFBOUNDS, "Huffman code size table out of bounds")
 JMESSAGE(JERR_HUFF_MISSING_CODE, "Missing Huffman code table entry")
 JMESSAGE(JERR_IMAGE_TOO_BIG, "Maximum supported image dimension is %u pixels")
 JMESSAGE(JERR_INPUT_EMPTY, "Empty input file")
 JMESSAGE(JERR_INPUT_EOF, "Premature end of input file")
 JMESSAGE(JERR_MISMATCHED_QUANT_TABLE,
 	 "Cannot transcode due to multiple use of quantization table %d")
-JMESSAGE(JERR_MISSING_TICKET, "Scan script does not transmit all data")
+JMESSAGE(JERR_MISSING_DATA, "Scan script does not transmit all data")
 JMESSAGE(JERR_MODE_CHANGE, "Invalid color quantization mode change")
 JMESSAGE(JERR_NOTIMPL, "Not implemented yet")
 JMESSAGE(JERR_NOT_COMPILED, "Requested feature was omitted at compile time")
@@ -116,7 +116,7 @@ JMESSAGE(JERR_TFILE_READ, "Read failed on temporary file")
 JMESSAGE(JERR_TFILE_SEEK, "Seek failed on temporary file")
 JMESSAGE(JERR_TFILE_WRITE,
 	 "Write failed on temporary file --- out of disk space?")
-JMESSAGE(JERR_TOO_LITTLE_TICKET, "Application transferred too few scanlines")
+JMESSAGE(JERR_TOO_LITTLE_DATA, "Application transferred too few scanlines")
 JMESSAGE(JERR_UNKNOWN_MARKER, "Unsupported marker type 0x%02x")
 JMESSAGE(JERR_VIRTUAL_BUG, "Virtual array controller messed up")
 JMESSAGE(JERR_WIDTH_OVERFLOW, "Image too wide for this implementation")
@@ -176,7 +176,7 @@ JMESSAGE(JWRN_ADOBE_XFORM, "Unknown Adobe color transform code %d")
 JMESSAGE(JWRN_ARITH_BAD_CODE, "Corrupt JPEG data: bad arithmetic code")
 JMESSAGE(JWRN_BOGUS_PROGRESSION,
 	 "Inconsistent progression sequence for component %d coefficient %d")
-JMESSAGE(JWRN_EXTRANEOUS_TICKET,
+JMESSAGE(JWRN_EXTRANEOUS_DATA,
 	 "Corrupt JPEG data: %u extraneous bytes before marker 0x%02x")
 JMESSAGE(JWRN_HIT_MARKER, "Corrupt JPEG data: premature end of data segment")
 JMESSAGE(JWRN_HUFF_BAD_CODE, "Corrupt JPEG data: bad Huffman code")
@@ -185,7 +185,7 @@ JMESSAGE(JWRN_JPEG_EOF, "Premature end of JPEG file")
 JMESSAGE(JWRN_MUST_RESYNC,
 	 "Corrupt JPEG data: found marker 0x%02x instead of RST%d")
 JMESSAGE(JWRN_NOT_SEQUENTIAL, "Invalid SOS parameters for sequential JPEG")
-JMESSAGE(JWRN_TOO_MUCH_TICKET, "Application transferred too many scanlines")
+JMESSAGE(JWRN_TOO_MUCH_DATA, "Application transferred too many scanlines")
 
 #ifdef JMAKE_ENUM_LIST
 

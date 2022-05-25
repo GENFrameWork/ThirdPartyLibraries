@@ -83,7 +83,7 @@ jpeg_write_scanlines (j_compress_ptr cinfo, JSAMPARRAY scanlines,
   if (cinfo->global_state != CSTATE_SCANNING)
     ERREXIT1(cinfo, JERR_BAD_STATE, cinfo->global_state);
   if (cinfo->next_scanline >= cinfo->image_height)
-    WARNMS(cinfo, JWRN_TOO_MUCH_TICKET);
+    WARNMS(cinfo, JWRN_TOO_MUCH_DATA);
 
   /* Call progress monitor hook if present */
   if (cinfo->progress != NULL) {
@@ -126,7 +126,7 @@ jpeg_write_raw_data (j_compress_ptr cinfo, JSAMPIMAGE data,
   if (cinfo->global_state != CSTATE_RAW_OK)
     ERREXIT1(cinfo, JERR_BAD_STATE, cinfo->global_state);
   if (cinfo->next_scanline >= cinfo->image_height) {
-    WARNMS(cinfo, JWRN_TOO_MUCH_TICKET);
+    WARNMS(cinfo, JWRN_TOO_MUCH_DATA);
     return 0;
   }
 

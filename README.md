@@ -35,43 +35,32 @@ Additionally, to facilitate the use of FrameWork GEN you have available this dow
 ## List of third party libraries
 
 **Name                                                                           Version**   
-  
-1. [**Zlib**](#zlib)                                                             1.2.11        
-1. [**Anti-Grain Geometry (AGG)**](#AGG)									     2.5  	 
-1. [**LibPNG**](#libpng)                                                         1.6.34          
-1. [**jpeglib**](#jpeglib)                                                       9c  
-1. [**Lua**](#lua)                                                               5.3.4  
-1. [**Duktape**](#duktape)                                                       2.3.0    
-1. [**STB Vorbis**](#stb)                                                        2.31   
-1. [**OpenAL Soft**](#openal-soft)                                               1.1  
-1. [**libpcap**](#libpcap)                                                       1.10.1  
-1. [**npcap**](#npcap)                                                           1.60  
-1. [**SQLite**](#sqlite)                                                         3.23.1  
-1. [**MySQL Connector C**](#mysql-connector-c)                                   6.1.11  
-1. [**LibPQ**](#libpq)                                                           11.1  
-1. [**FFmpeg**](#ffmpeg)                                                         4.0  
-1. [**OpenGL-Registry**](#opengl-registry)                                       N/A    
+
+1. [**Anti-Grain Geometry (AGG)**](#AGG)									     2.5 
+1. [**Duktape**](#duktape)                                                       2.3.0       
+1. [**FFmpeg**](#ffmpeg)                                                         4.0
+1. [**freetype**](freetype)                                                      2.10.1
 1. [**OpenGL Extension Wrangler Library**](opengl-extension-wrangler-library)    1.13.0  
-1. [**Android NDK**](android-ndk)								                 r17   
 1. [**InpOut 32/64**](inpout-32/64)                                              1.5.0.1  
+1. [**jpeglib**](#jpeglib)                                                       9c 
+1. [**libpcap**](#libpcap)                                                       1.10.1 
+1. [**LibPNG**](#libpng)                                                         1.6.34
+1. [**Lua**](#lua)                                                               5.3.4  
+1. [**MySQL Connector C**](#mysql-connector-c)                                   6.1.11 
+1. [**npcap**](#npcap)                                                           1.60
+1. [**OpenAL Soft**](#openal-soft)                                               1.1  
+1. [**OpenGL-Registry**](#opengl-registry)                                       N/A 
+1. [**LibPQ**](#libpq)                                                           11.1  
+1. [**rpi_ws281x**](#rpi_ws281x)											     N/A
+1. [**SQLite**](#sqlite)                                                         3.23.1  
+1. [**StackWalker**](StackWalker)											     v5 
+1. [**STB Vorbis**](#stb)                                                        2.31  
 1. [**Toast++**](Toast++)                                                        1.1  
-1. [**StackWalker**](StackWalker)											     v5  
-1. [**freetype**](freetype)     º                                                2.10.1
+1. [**Zlib**](#zlib)                                                             1.2.11        
+1. [**Android NDK**](android-ndk)								                 r17   	 
+          
 
 ## Details of third party libraries
-
-
-### **Zlib**
-
-A Massively Spiffy Yet Delicately Unobtrusive Compression Library. It was written by Jean-loup Gailly (compression) and Mark Adler (decompression).
-
-Directory        **zlib**  
-Version          **1.2.11**    
-Web              **https://zlib.net/**  
-Download URL     **https://github.com/madler/zlib**  
-Comments         
-You must use the command ./configure in linux.  GEN use also some .H + .C of the subdirectory contrib/minicom. 
-
 
 
 ### **AGG**
@@ -82,8 +71,88 @@ Directory        **agg**
 Version          **2.5**    
 Web              **http://www.antigrain.com/**  
 Download URL     **http://www.antigrain.com/download/index.html**  
+Comments   
+
+
+### **Duktape** 
+
+Duktape is an embeddable Javascript engine, with a focus on portability and compact footprint. Duktape is easy to integrate into a C/C++ project.
+
+Directory        **duktape**  
+Version          **2.3.0**  
+Web              **https://duktape.org**  
+Download URL     **https://duktape.org/download.html**   
+Comments  
+
+
+### **FFmpeg**
+
+FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. 
+
+Directory        **ffmpeg**  
+Version          **4.0**  
+Web              **http://ffmpeg.org  https://www.ffmpeg.org/download.html#repositories**  
+Download URL     **https://ffmpeg.zeranoe.com/builds/** , **https://sourceforge.net/projects/avbuild/files/android/**  
+Comments
+It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.      
+
+
+### **FreeType** 
+
+FreeType is a freely available software library to render fonts.
+
+Directory        **freetype**  
+Version          **2.10.1**  
+Web              **https://freetype.org/**  
+Download URL     **http://gnuwin32.sourceforge.net/packages/freetype.htm**   
 Comments         
 
+
+### **OpenGL Extension Wrangler Library**
+
+The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL extensions are supported on the target platform. OpenGL core and extension functionality is exposed in a single header file. 
+
+Directory        **glew**   
+Version          **1.13.0**  
+Web              **http://glew.sourceforge.net/**  
+Download URL     **https://github.com/nigels-com/glew**  
+Comments         
+It is necessary to modify the file glew.h.
+
+
+### **InpOut 32/64**
+
+InpOut32 is an open source windows DLL and Driver to give direct access to hardware ports (for example the parallel and serial port from user level programs. It is originally developed by the people at Logix4U for Windows 9x and 32bit variations of NT (NT/2000/XP/2003 etc.).
+
+Directory        **InpOutBinaries**  
+Version          **1.5.0.1**  
+Web              **http://www.highrez.co.uk/**  
+Download URL     **http://www.highrez.co.uk/downloads/inpout32/**  
+Comments         
+Only for Windows platform. 
+
+
+### **jpeglib**  
+
+This library is distributes by IJG (is an informal group). The first version was released on 7-Oct-1991.This is a stable and solid foundation for many application's JPEG support.
+
+Directory        **jpeglib**  
+Version          **9e of 16-Jan-2022**  
+Web              **http://www.ijg.org**  
+Download URL     **http://www.ijg.org/files/jpegsr9c.zip**  
+Comments         **Create jconfig.h**  
+
+
+### **libpcap**
+
+The Packet Capture library provides a high level interface to packet capture systems. All packets on the network, even those destined for other hosts, are accessible through this mechanism. It also supports saving captured packets to a savefile, and reading packets from a savefile.
+
+Directory        **libpcap**  
+Version          **1.8.1**  
+Web              **http://www.tcpdump.org**  
+Download URL     **https://github.com/the-tcpdump-group/libpcap**  
+Comments
+It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
 
 ### **LibPNG**  
@@ -98,19 +167,6 @@ Comments
 You must use the command ./configure in linux and eliminate some #defines of pngconf.h
 
 
-
-### **jpeglib**  
-
-This library is distributes by IJG (is an informal group). The first version was released on 7-Oct-1991.This is a stable and solid foundation for many application's JPEG support.
-
-Directory        **jpeglib**  
-Version          **9c**  
-Web              **http://www.ijg.org**  
-Download URL     **http://www.ijg.org/files/jpegsr9c.zip**  
-Comments         **Create jconfig.h**  
-
-
-
 ### **Lua** 
 
 Lua is a powerful, efficient, lightweight, embeddable scripting language. It supports procedural programming, object-oriented programming, functional programming, data-driven programming, and data description.
@@ -122,53 +178,14 @@ Download URL     **https://www.lua.org/download.html**
 Comments  
 
 
+### **MySQL Connector C**
 
-### **Duktape** 
+Connector/C (libmysqlclient) is a client library for C development of MySQL.
 
-Duktape is an embeddable Javascript engine, with a focus on portability and compact footprint. Duktape is easy to integrate into a C/C++ project.
-
-Directory        **duktape**  
-Version          **2.3.0**  
-Web              **https://duktape.org**  
-Download URL     **https://duktape.org/download.html**   
-Comments  
-
-
-
-### **STB**  
-
-Collection of libraries for C/C++- Most libraries by stb, except: stb_dxt by Fabian "ryg" Giesen, stb_image_resize by Jorge L. "VinoBS" Rodriguez, and stb_sprintf by Jeff Roberts.
-
-Directory        **stb**  
-Version          **2.31**  
-Web              **http://nothings.org/stb_vorbis/**  
-Download URL     **https://github.com/nothings/stb**  
-Comments         
-Need add stb_vorbis.h (OGG file format) to GEN compile. 
-
-
-
-### **OpenAL Soft**
-
-OpenAL provides capabilities for playing audio in a virtual 3D environment. Distance attenuation, doppler shift, and directional sound emitters are among the features handled by the API. More advanced effects, including air absorption, occlusion, and environmental reverb, are available through the EFX extension. It also facilitates streaming audio, multi-channel buffers, and audio capture.
-
-Directory        **openal-soft**  
-Version          **1.1**  
-Web              **http://openal-soft.org/**  
-Download URL     **https://github.com/kcat/openal-soft**  
-Comments
-It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
-
-
-
-### **libpcap**
-
-The Packet Capture library provides a high level interface to packet capture systems. All packets on the network, even those destined for other hosts, are accessible through this mechanism. It also supports saving captured packets to a savefile, and reading packets from a savefile.
-
-Directory        **libpcap**  
-Version          **1.8.1**  
-Web              **http://www.tcpdump.org**  
-Download URL     **https://github.com/the-tcpdump-group/libpcap**  
+Directory        **mysql-connector-c**  
+Version          **6.1.11**  
+Web              **https://www.mysql.com**  
+Download URL     **https://dev.mysql.com/downloads/connector/c/** 
 Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
@@ -185,56 +202,16 @@ Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
 
+### **OpenAL Soft**
 
-### **SQLite**
+OpenAL provides capabilities for playing audio in a virtual 3D environment. Distance attenuation, doppler shift, and directional sound emitters are among the features handled by the API. More advanced effects, including air absorption, occlusion, and environmental reverb, are available through the EFX extension. It also facilitates streaming audio, multi-channel buffers, and audio capture.
 
-SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine. SQLite is the most used database engine in the world. 
-
-Directory        **sqlite**  
-Version          **3.23.1**  
-Web              **https://www.sqlite.org/index.html**  
-Download URL     **https://www.sqlite.org/download.html**   
-Comments
-
-
-
-### **MySQL Connector C**
-
-Connector/C (libmysqlclient) is a client library for C development of MySQL.
-
-Directory        **mysql-connector-c**  
-Version          **6.1.11**  
-Web              **https://www.mysql.com**  
-Download URL     **https://dev.mysql.com/downloads/connector/c/** 
+Directory        **openal-soft**  
+Version          **1.1**  
+Web              **http://openal-soft.org/**  
+Download URL     **https://github.com/kcat/openal-soft**  
 Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
-
-
-
-### **LibPQ**
-LibPQ is part of the official PostgreSQL GIT repository. It´s the interface/connector for this SQL database.
-
-postgres Connector  
-Directory        **postgres**  
-Version          **11.1**  
-Web              **https://www.postgresql.org/**  
-Download URL     **https://www.postgresql.org/ftp/source/**   
-Comments
-It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
-
-
-
-### **FFmpeg**
-
-FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. 
-
-Directory        **ffmpeg**  
-Version          **4.0**  
-Web              **http://ffmpeg.org  https://www.ffmpeg.org/download.html#repositories**  
-Download URL     **https://ffmpeg.zeranoe.com/builds/** , **https://sourceforge.net/projects/avbuild/files/android/**  
-Comments
-It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
-
 
 
 ### **OpenGL-Registry**
@@ -249,57 +226,39 @@ Comments
 Only the header glext.h is used.
 
 
+### **LibPQ**
+LibPQ is part of the official PostgreSQL GIT repository. It´s the interface/connector for this SQL database.
 
-### **OpenGL Extension Wrangler Library**
-
-The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL extensions are supported on the target platform. OpenGL core and extension functionality is exposed in a single header file. 
-
-Directory        **glew**   
-Version          **1.13.0**  
-Web              **http://glew.sourceforge.net/**  
-Download URL     **https://github.com/nigels-com/glew**  
-Comments         
-It is necessary to modify the file glew.h. 
-
-
-
-### **Android NDK**
-
-The Android NDK (Native Developed Kit) is a toolset that lets you implement parts of your app in native code, using languages such as C and C++. 
-
-Directory        **android-ndk**  
-Version          **r17** 
-Web              **https://developer.android.com/ndk/**  
-Download URL     **https://developer.android.com/ndk/downloads/**  
+postgres Connector  
+Directory        **postgres**  
+Version          **11.1**  
+Web              **https://www.postgresql.org/**  
+Download URL     **https://www.postgresql.org/ftp/source/**   
 Comments
-Only for Android platform. Only use the Android **Native App Glue**.
+It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
 
+### **rpi_ws281x**
 
-### **InpOut 32/64**
+Userspace Raspberry Pi library for controlling WS281X LEDs. This includes WS2812 and SK6812RGB RGB LEDs
 
-InpOut32 is an open source windows DLL and Driver to give direct access to hardware ports (for example the parallel and serial port from user level programs. It is originally developed by the people at Logix4U for Windows 9x and 32bit variations of NT (NT/2000/XP/2003 etc.).
-
-Directory        **InpOutBinaries**  
-Version          **1.5.0.1**  
-Web              **http://www.highrez.co.uk/**  
-Download URL     **http://www.highrez.co.uk/downloads/inpout32/**  
-Comments         
-Only for Windows platform.
-
+Directory        **rpi_ws281x**  
+Version          **n/a**  
+Web              **https://github.com/jgarff/rpi_ws281x**  
+Download URL     **https://github.com/jgarff/rpi_ws281x/archive/refs/heads/master.zip**   
+Comments
+Version only for Raspberry Pi.
 
 
-### **Toast++**
+### **SQLite**
 
-Toast++ is a set of C++ classes to provide an encapsulation for Toast Notifications for Desktop Win32 applications.
+SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine. SQLite is the most used database engine in the world. 
 
-Directory        **Toast++**  
-Version          **1.1**  
-Web              **http://www.naughter.com/toastpp.html**  
-Download URL     **http://www.naughter.com/download/toastpp.zip**   
-Comments         
-This librarys are only for WINDOWS.
-
+Directory        **sqlite**  
+Version          **3.23.1**  
+Web              **https://www.sqlite.org/index.html**  
+Download URL     **https://www.sqlite.org/download.html**   
+Comments
 
 
 ### **StackWalker** 
@@ -315,17 +274,50 @@ Comments
 This librarys are only for WINDOWS.
 
 
+### **STB**  
 
-### **FreeType** 
+Collection of libraries for C/C++- Most libraries by stb, except: stb_dxt by Fabian "ryg" Giesen, stb_image_resize by Jorge L. "VinoBS" Rodriguez, and stb_sprintf by Jeff Roberts.
 
-FreeType is a freely available software library to render fonts.
-
-Directory        **freetype**  
-Version          **2.10.1**  
-Web              **https://freetype.org/**  
-Download URL     **http://gnuwin32.sourceforge.net/packages/freetype.htm**   
+Directory        **stb**  
+Version          **2.31**  
+Web              **http://nothings.org/stb_vorbis/**  
+Download URL     **https://github.com/nothings/stb**  
 Comments         
+Need add stb_vorbis.h (OGG file format) to GEN compile. 
 
 
+### **Toast++**
 
+Toast++ is a set of C++ classes to provide an encapsulation for Toast Notifications for Desktop Win32 applications.
+
+Directory        **Toast++**  
+Version          **1.1**  
+Web              **http://www.naughter.com/toastpp.html**  
+Download URL     **http://www.naughter.com/download/toastpp.zip**   
+Comments         
+This librarys are only for WINDOWS.
+
+
+### **Zlib**
+
+A Massively Spiffy Yet Delicately Unobtrusive Compression Library. It was written by Jean-loup Gailly (compression) and Mark Adler (decompression).
+
+Directory        **zlib**  
+Version          **1.2.11**    
+Web              **https://zlib.net/**  
+Download URL     **https://github.com/madler/zlib**  
+Comments         
+You must use the command ./configure in linux.  GEN use also some .H + .C of the subdirectory contrib/minicom. 
+
+
+### **Android NDK**
+
+The Android NDK (Native Developed Kit) is a toolset that lets you implement parts of your app in native code, using languages such as C and C++. 
+
+Directory        **android-ndk**  
+Version          **r17** 
+Web              **https://developer.android.com/ndk/**  
+Download URL     **https://developer.android.com/ndk/downloads/**  
+Comments
+Only for Android platform. Only use the Android **Native App Glue**.
 

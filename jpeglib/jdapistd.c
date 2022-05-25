@@ -158,7 +158,7 @@ jpeg_read_scanlines (j_decompress_ptr cinfo, JSAMPARRAY scanlines,
   if (cinfo->global_state != DSTATE_SCANNING)
     ERREXIT1(cinfo, JERR_BAD_STATE, cinfo->global_state);
   if (cinfo->output_scanline >= cinfo->output_height) {
-    WARNMS(cinfo, JWRN_TOO_MUCH_TICKET);
+    WARNMS(cinfo, JWRN_TOO_MUCH_DATA);
     return 0;
   }
 
@@ -191,7 +191,7 @@ jpeg_read_raw_data (j_decompress_ptr cinfo, JSAMPIMAGE data,
   if (cinfo->global_state != DSTATE_RAW_OK)
     ERREXIT1(cinfo, JERR_BAD_STATE, cinfo->global_state);
   if (cinfo->output_scanline >= cinfo->output_height) {
-    WARNMS(cinfo, JWRN_TOO_MUCH_TICKET);
+    WARNMS(cinfo, JWRN_TOO_MUCH_DATA);
     return 0;
   }
 

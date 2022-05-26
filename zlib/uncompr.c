@@ -21,14 +21,14 @@
 
      uncompress returns Z_OK if success, Z_MEM_ERROR if there was not enough
    memory, Z_BUF_ERROR if there was not enough room in the output buffer, or
-   Z_TICKET_ERROR if the input data was corrupted, including if the input data is
+   Z_DATA_ERROR if the input data was corrupted, including if the input data is
    an incomplete zlib stream.
 */
-int ZEXPORT uncompress2 (
-    Bytef *dest,
-    uLongf *destLen,
-    const Bytef *source,
-    uLong *sourceLen)
+int ZEXPORT uncompress2 (dest, destLen, source, sourceLen)
+    Bytef *dest;
+    uLongf *destLen;
+    const Bytef *source;
+    uLong *sourceLen;
 {
     z_stream stream;
     int err;
@@ -78,16 +78,16 @@ int ZEXPORT uncompress2 (
 
     inflateEnd(&stream);
     return err == Z_STREAM_END ? Z_OK :
-           err == Z_NEED_DICT ? Z_TICKET_ERROR  :
-           err == Z_BUF_ERROR && left + stream.avail_out ? Z_TICKET_ERROR :
+           err == Z_NEED_DICT ? Z_DATA_ERROR  :
+           err == Z_BUF_ERROR && left + stream.avail_out ? Z_DATA_ERROR :
            err;
 }
 
-int ZEXPORT uncompress (
-    Bytef *dest,
-    uLongf *destLen,
-    const Bytef *source,
-    uLong sourceLen)
+int ZEXPORT uncompress (dest, destLen, source, sourceLen)
+    Bytef *dest;
+    uLongf *destLen;
+    const Bytef *source;
+    uLong sourceLen;
 {
     return uncompress2(dest, destLen, source, &sourceLen);
 }

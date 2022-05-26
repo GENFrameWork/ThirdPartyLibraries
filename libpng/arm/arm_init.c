@@ -1,19 +1,24 @@
+
 /* arm_init.c - NEON optimised filter functions
  *
+ * Copyright (c) 2018 Cosmin Truta
  * Copyright (c) 2014,2016 Glenn Randers-Pehrson
  * Written by Mans Rullgard, 2011.
- * Last changed in libpng 1.6.22 [May 26, 2016]
  *
  * This code is released under the libpng license.
  * For conditions of distribution and use, see the disclaimer
  * and license in png.h
  */
+
 /* Below, after checking __linux__, various non-C90 POSIX 1003.1 functions are
  * called.
  */
 #define _POSIX_SOURCE 1
+
 #include "../pngpriv.h"
+
 #ifdef PNG_READ_SUPPORTED
+
 #if PNG_ARM_NEON_OPT > 0
 #ifdef PNG_ARM_NEON_CHECK_SUPPORTED /* Do run-time checks */
 /* WARNING: it is strongly recommended that you do not build libpng with
@@ -33,17 +38,22 @@
 #     define PNG_ARM_NEON_FILE "contrib/arm-neon/linux.c"
 #  endif
 #endif
+
 #ifdef PNG_ARM_NEON_FILE
+
 #include <signal.h> /* for sig_atomic_t */
 static int png_have_neon(png_structp png_ptr);
 #include PNG_ARM_NEON_FILE
+
 #else  /* PNG_ARM_NEON_FILE */
 #  error "PNG_ARM_NEON_FILE undefined: no support for run-time ARM NEON checks"
 #endif /* PNG_ARM_NEON_FILE */
 #endif /* PNG_ARM_NEON_CHECK_SUPPORTED */
+
 #ifndef PNG_ALIGNED_MEMORY_SUPPORTED
 #  error "ALIGNED_MEMORY is required; set: -DPNG_ALIGNED_MEMORY_SUPPORTED"
 #endif
+
 void
 png_init_filter_functions_neon(png_structp pp, unsigned int bpp)
 {
@@ -71,8 +81,10 @@ png_init_filter_functions_neon(png_structp pp, unsigned int bpp)
 #ifdef PNG_ARM_NEON_CHECK_SUPPORTED
          {
             static volatile sig_atomic_t no_neon = -1; /* not checked */
+
             if (no_neon < 0)
                no_neon = !png_have_neon(pp);
+
             if (no_neon)
                return;
          }
@@ -80,14 +92,17 @@ png_init_filter_functions_neon(png_structp pp, unsigned int bpp)
          break;
 #endif
 #endif /* PNG_ARM_NEON_CHECK_SUPPORTED */
+
 #ifdef PNG_ARM_NEON_API_SUPPORTED
       default: /* OFF or INVALID */
          return;
+
       case PNG_OPTION_ON:
          /* Option turned on */
          break;
    }
 #endif
+
    /* IMPORTANT: any new external functions used here must be declared using
     * PNG_INTERNAL_FUNCTION in ../pngpriv.h.  This is required so that the
     * 'prefix' option to configure works:
@@ -100,6 +115,7 @@ png_init_filter_functions_neon(png_structp pp, unsigned int bpp)
     * initialization function.)
     */
    pp->read_filter[PNG_FILTER_VALUE_UP-1] = png_read_filter_row_up_neon;
+
    if (bpp == 3)
    {
       pp->read_filter[PNG_FILTER_VALUE_SUB-1] = png_read_filter_row_sub3_neon;
@@ -107,6 +123,7 @@ png_init_filter_functions_neon(png_structp pp, unsigned int bpp)
       pp->read_filter[PNG_FILTER_VALUE_PAETH-1] =
          png_read_filter_row_paeth3_neon;
    }
+
    else if (bpp == 4)
    {
       pp->read_filter[PNG_FILTER_VALUE_SUB-1] = png_read_filter_row_sub4_neon;
@@ -117,4 +134,3 @@ png_init_filter_functions_neon(png_structp pp, unsigned int bpp)
 }
 #endif /* PNG_ARM_NEON_OPT > 0 */
 #endif /* READ */
-

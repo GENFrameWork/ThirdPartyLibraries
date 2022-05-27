@@ -143,8 +143,7 @@ FT_BEGIN_HEADER
    *         file `ftconfig.h` either statically or through the `configure`
    *         script on supported platforms.
    */
-//#undef FT_CONFIG_OPTION_FORCE_INT64
-#define FT_CONFIG_OPTION_FORCE_INT64
+#undef FT_CONFIG_OPTION_FORCE_INT64
 
 
   /**************************************************************************
@@ -225,7 +224,7 @@ FT_BEGIN_HEADER
    *   `configure` script) and you define this macro, you also have to pass
    *   `SYSTEM_ZLIB=yes` as an argument to make.
    */
-#define FT_CONFIG_OPTION_SYSTEM_ZLIB 
+/* #define FT_CONFIG_OPTION_SYSTEM_ZLIB */
 
 
   /**************************************************************************

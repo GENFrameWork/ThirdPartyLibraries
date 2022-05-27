@@ -36,28 +36,28 @@ Additionally, to facilitate the use of FrameWork GEN you have available this dow
 
 **Name                                                                           Version**   
 
-1. [**Anti-Grain Geometry (AGG)**](#AGG)									     2.5 
-1. [**Duktape**](#duktape)                                                       2.3.0       
-1. [**FFmpeg**](#ffmpeg)                                                         4.0
-1. [**freetype**](freetype)                                                      2.10.1
-1. [**OpenGL Extension Wrangler Library**](opengl-extension-wrangler-library)    1.13.0  
-1. [**InpOut 32/64**](inpout-32/64)                                              1.5.0.1  
-1. [**jpeglib**](#jpeglib)                                                       9c 
-1. [**libpcap**](#libpcap)                                                       1.10.1 
-1. [**LibPNG**](#libpng)                                                         1.6.34
-1. [**Lua**](#lua)                                                               5.3.4  
-1. [**MySQL Connector C**](#mysql-connector-c)                                   6.1.11 
-1. [**npcap**](#npcap)                                                           1.60
-1. [**OpenAL Soft**](#openal-soft)                                               1.1  
-1. [**OpenGL-Registry**](#opengl-registry)                                       N/A 
-1. [**LibPQ**](#libpq)                                                           11.1  
-1. [**rpi_ws281x**](#rpi_ws281x)											     N/A
-1. [**SQLite**](#sqlite)                                                         3.23.1  
-1. [**StackWalker**](StackWalker)											     v5 
-1. [**STB Vorbis**](#stb)                                                        2.31  
-1. [**Toast++**](Toast++)                                                        1.1  
-1. [**Zlib**](#zlib)                                                             1.2.11        
-1. [**Android NDK**](android-ndk)								                 r17   	 
+1. [**Anti-Grain Geometry (AGG)**](#AGG)									     **2.5** 
+1. [**Duktape**](#duktape)                                                       **2.3.0**       
+1. [**FFmpeg**](#ffmpeg)                                                         **4.0**
+1. [**freetype**](freetype)                                                      **2.12.1**
+1. [**OpenGL Extension Wrangler Library**](opengl-extension-wrangler-library)    **1.13.0**  
+1. [**InpOut 32/64**](inpout-32/64)                                              **1.5.0.1**  
+1. [**jpeglib**](#jpeglib)                                                       **9e** 
+1. [**libpcap**](#libpcap)                                                       **1.10.1** 
+1. [**LibPNG**](#libpng)                                                         **1.6.37**
+1. [**Lua**](#lua)                                                               **5.3.4**  
+1. [**MySQL Connector C**](#mysql-connector-c)                                   **6.1.11** 
+1. [**npcap**](#npcap)                                                           **1.60**
+1. [**OpenAL Soft**](#openal-soft)                                               **1.1**  
+1. [**OpenGL-Registry**](#opengl-registry)                                       **N/A** 
+1. [**LibPQ**](#libpq)                                                           **11.1**  
+1. [**rpi_ws281x**](#rpi_ws281x)											     **N/A**
+1. [**SQLite**](#sqlite)                                                         **3.23.1**  
+1. [**StackWalker**](StackWalker)											     **v5** 
+1. [**STB Vorbis**](#stb)                                                        **2.31**  
+1. [**Toast++**](Toast++)                                                        **1.1**  
+1. [**Zlib**](#zlib)                                                             **1.2.12**        
+1. [**Android NDK**](android-ndk)								                 **r17**   	 
           
 
 ## Details of third party libraries

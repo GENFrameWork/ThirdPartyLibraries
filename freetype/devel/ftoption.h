@@ -172,7 +172,7 @@ FT_BEGIN_HEADER
    *
    * LZW-compressed file support.
    *
-   *   FreeType now handles font files that have been compressed with the
+   *   FreeType now handles font files that have been compressed with th
    *   `compress` program.  This is mostly used to parse many of the PCF
    *   files that come with various X11 distributions.  The implementation
    *   uses NetBSD's `zopen` to partially uncompress the file on the fly (see

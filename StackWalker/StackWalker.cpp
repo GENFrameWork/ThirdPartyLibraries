@@ -356,7 +356,7 @@ typedef struct IMAGEHLP_MODULE64_V2 {
     CHAR     ModuleName[32];         // module name
     CHAR     ImageName[256];         // image name
     CHAR     LoadedImageName[256];   // symbol file name
-};
+} IMAGEHLP_MODULE64_V2;
 
 
   // SymCleanup()
@@ -677,6 +677,7 @@ private:
           case 9: // SymDia:
             szSymType = "DIA";
             break;
+          default: break;
         }
       }
       this->m_parent->OnLoadModule(img, mod, baseAddr, size, result, szSymType, Module.LoadedImageName, fileVersion);

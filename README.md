@@ -1,3 +1,5 @@
+![GEN FrameWork](GENIcon.png "GEN FrameWork")
+
 # GEN Third Party Libraries
 
 **GEN FrameWork** uses several third-party libraries for part of its functionality that it offers. These libraries should only be present if some features of **GEN FrameWork** are used.
@@ -7,14 +9,15 @@ It is convenient that these libraries are organized in a directory and have the 
 The suggested default organization and directory is:
 
 **ThirdPartyLibraries struct (Default)** 
-```
-GENFramework/ThirdPartyLibraries/zlib
-                                 libpng
-                                 jpeglib
-                                 lua
-                                 ...
-                                 (rest of directories)
-````
+    
+    GENFramework/ThirdPartyLibraries/
+	 zlib  
+     libpng  
+     jpeglib  
+     lua  
+     ...  
+     (rest of directories)  
+    
 
 The project files of the included applications of TEST (GENFrameWork/Tests) and GEN UTILS (GENFrameWork/Utils) refer to that default directory.
 

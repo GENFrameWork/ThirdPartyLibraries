@@ -60,7 +60,8 @@ Additionally, to facilitate the use of FrameWork GEN you have available this dow
 1. [**STB Vorbis**](#stb)                                                        **2.31**  
 1. [**Toast++**](Toast++)                                                        **1.1**  
 1. [**Zlib**](#zlib)                                                             **1.2.12**        
-1. [**Android NDK**](android-ndk)								                 **r17**   	 
+1. [**Android NDK**](#android-ndk)								                 **r17**  
+1. [**GoogleTest**](#GoogleTest)                                                 **1.12.1** 	 
           
 
 ## Details of third party libraries
@@ -323,4 +324,18 @@ Web              **https://developer.android.com/ndk/**
 Download URL     **https://developer.android.com/ndk/downloads/**  
 Comments
 Only for Android platform. Only use the Android **Native App Glue**.
+
+
+### **GoogleTest**
+
+GoogleTest is a testing framework developed by the Testing Technology team with Google’s specific requirements and constraints in mind. 
+
+Directory        **GoogleTest**  
+Version          **1.12.1** 
+Web              **https://github.com/google/googletest**  
+Download URL     **https://github.com/google/googletest**  
+Comments
+
+
+
 

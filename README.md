@@ -61,7 +61,7 @@ Additionally, to facilitate the use of FrameWork GEN you have available this dow
 1. [**Toast++**](Toast++)                                                        **1.1**  
 1. [**Zlib**](#zlib)                                                             **1.2.12**        
 1. [**Android NDK**](#android-ndk)								                 **r17**  
-1. [**GoogleTest**](#GoogleTest)                                                 **1.12.1** 	 
+1. [**GoogleTest**](#GoogleTest)                                                 **1.12.1** + **1.10.0** 
           
 
 ## Details of third party libraries

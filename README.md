@@ -39,7 +39,7 @@ Additionally, to facilitate the use of FrameWork GEN you have available this dow
 
 **Name                                                                           Version**   
 
-1. [**Anti-Grain Geometry (AGG)**](#AGG)									     **2.5** 
+1. [**Anti-Grain Geometry (AGG)**](#AGG)									                       **2.5** 
 1. [**Duktape**](#duktape)                                                       **2.3.0**       
 1. [**FFmpeg**](#ffmpeg)                                                         **4.0**
 1. [**freetype**](freetype)                                                      **2.12.1**
@@ -54,14 +54,15 @@ Additionally, to facilitate the use of FrameWork GEN you have available this dow
 1. [**OpenAL Soft**](#openal-soft)                                               **1.1**  
 1. [**OpenGL-Registry**](#opengl-registry)                                       **N/A** 
 1. [**LibPQ**](#libpq)                                                           **11.1**  
-1. [**rpi_ws281x**](#rpi_ws281x)											     **N/A**
+1. [**rpi_ws281x**](#rpi_ws281x)											                           **N/A**
 1. [**SQLite**](#sqlite)                                                         **3.23.1**  
-1. [**StackWalker**](StackWalker)											     **v5** 
+1. [**StackWalker**](StackWalker)											                           **v5** 
 1. [**STB Vorbis**](#stb)                                                        **2.31**  
 1. [**Toast++**](Toast++)                                                        **1.1**  
 1. [**Zlib**](#zlib)                                                             **1.2.12**        
-1. [**Android NDK**](#android-ndk)								                 **r17**  
+1. [**Android NDK**](#android-ndk)								                               **r17**  
 1. [**GoogleTest**](#GoogleTest)                                                 **1.12.1** + **1.10.0** 
+1. [**esp-idf**](#ESP-IDF)                                                       **v5.1** 
           
 
 ## Details of third party libraries
@@ -336,6 +337,17 @@ Web              **https://github.com/google/googletest**
 Download URL     **https://github.com/google/googletest**  
 Comments
 
+
+
+### **ESP-IDF**
+
+Espressif provides basic hardware and software resources to help application developers realize their ideas using the ESP32 series hardware. 
+
+Directory        **ESP-IDF**  
+Version          **v5.1** 
+Web              **https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html**  
+Download URL     **https://github.com/espressif/esp-idf**  
+Comments
 
 
 

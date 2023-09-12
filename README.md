@@ -47,7 +47,7 @@ Additionally, to facilitate the use of FrameWork GEN you have available this dow
 1. [**InpOut 32/64**](inpout-32/64)                                              **1.5.0.1**  
 1. [**jpeglib**](#jpeglib)                                                       **9e** 
 1. [**libpcap**](#libpcap)                                                       **1.10.1** 
-1. [**LibPNG**](#libpng)                                                         **1.6.37**
+1. [**LibPNG**](#libpng)                                                         **1.6.40**
 1. [**Lua**](#lua)                                                               **5.3.4**  
 1. [**MySQL Connector C**](#mysql-connector-c)                                   **6.1.11** 
 1. [**npcap**](#npcap)                                                           **1.60**
@@ -165,7 +165,7 @@ It´s neccesary download the binary files. Used dinamic librarys to run GEN appl
 LibPNG is the official PNG reference library. It supports almost all PNG features, is extensible, and has been extensively tested for over 22 years. Libpng is available as ANSI C (C89) source code and requires zlib 1.0.4 or later.
 
 Directory        **libpng**  
-Version          **1.6.34**  
+Version          **1.6.40**  
 Web              **http://www.libpng.org/pub/png/libpng.html**  
 Download URL     **https://sourceforge.net/projects/libpng/files/libpng16/**  
 Comments         
@@ -297,8 +297,8 @@ Toast++ is a set of C++ classes to provide an encapsulation for Toast Notificati
 
 Directory        **Toast++**  
 Version          **1.1**  
-Web              **http://www.naughter.com/toastpp.html**  
-Download URL     **http://www.naughter.com/download/toastpp.zip**   
+Web              **http://www.naughter.com/toastpp.html**    
+Download URL     **http://www.naughter.com/download/toastpp.zip**     
 Comments         
 This librarys are only for WINDOWS.
 
@@ -307,10 +307,10 @@ This librarys are only for WINDOWS.
 
 A Massively Spiffy Yet Delicately Unobtrusive Compression Library. It was written by Jean-loup Gailly (compression) and Mark Adler (decompression).
 
-Directory        **zlib**  
-Version          **1.2.11**    
-Web              **https://zlib.net/**  
-Download URL     **https://github.com/madler/zlib**  
+Directory        **zlib**    
+Version          **1.2.11**      
+Web              **https://zlib.net/**    
+Download URL     **https://github.com/madler/zlib**    
 Comments         
 You must use the command ./configure in linux.  GEN use also some .H + .C of the subdirectory contrib/minicom. 
 
@@ -319,10 +319,10 @@ You must use the command ./configure in linux.  GEN use also some .H + .C of the
 
 The Android NDK (Native Developed Kit) is a toolset that lets you implement parts of your app in native code, using languages such as C and C++. 
 
-Directory        **android-ndk**  
-Version          **r17** 
-Web              **https://developer.android.com/ndk/**  
-Download URL     **https://developer.android.com/ndk/downloads/**  
+Directory        **android-ndk**   
+Version          **r17**   
+Web              **https://developer.android.com/ndk/**    
+Download URL     **https://developer.android.com/ndk/downloads/**    
 Comments
 Only for Android platform. Only use the Android **Native App Glue**.
 
@@ -331,10 +331,10 @@ Only for Android platform. Only use the Android **Native App Glue**.
 
 GoogleTest is a testing framework developed by the Testing Technology team with Google’s specific requirements and constraints in mind. 
 
-Directory        **GoogleTest**  
-Version          **1.12.1** 
-Web              **https://github.com/google/googletest**  
-Download URL     **https://github.com/google/googletest**  
+Directory        **GoogleTest**    
+Version          **1.12.1**   
+Web              **https://github.com/google/googletest**    
+Download URL     **https://github.com/google/googletest**    
 Comments
 
 
@@ -343,10 +343,10 @@ Comments
 
 Espressif provides basic hardware and software resources to help application developers realize their ideas using the ESP32 series hardware. 
 
-Directory        **ESP-IDF**  
-Version          **v5.1** 
-Web              **https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html**  
-Download URL     **https://github.com/espressif/esp-idf**  
+Directory        **ESP-IDF**    
+Version          **v5.1**   
+Web              **https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html**    
+Download URL     **https://github.com/espressif/esp-idf**    
 Comments
 
 

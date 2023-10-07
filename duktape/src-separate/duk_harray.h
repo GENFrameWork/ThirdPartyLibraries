@@ -9,16 +9,28 @@
 #if !defined(DUK_HARRAY_H_INCLUDED)
 #define DUK_HARRAY_H_INCLUDED
 
-#define DUK_ASSERT_HARRAY_VALID(h) do { \
-		DUK_ASSERT((h) != NULL); \
-		DUK_ASSERT(DUK_HOBJECT_IS_ARRAY((duk_hobject *) (h))); \
-		DUK_ASSERT(DUK_HOBJECT_HAS_EXOTIC_ARRAY((duk_hobject *) (h))); \
+#if defined(DUK_USE_ASSERTIONS)
+DUK_INTERNAL_DECL void duk_harray_assert_valid(duk_harray *h);
+#define DUK_HARRAY_ASSERT_VALID(h) \
+	do { \
+		duk_harray_assert_valid((h)); \
 	} while (0)
+#else
+#define DUK_HARRAY_ASSERT_VALID(h) \
+	do { \
+	} while (0)
+#endif
 
-#define DUK_HARRAY_LENGTH_WRITABLE(h)         (!(h)->length_nonwritable)
-#define DUK_HARRAY_LENGTH_NONWRITABLE(h)      ((h)->length_nonwritable)
-#define DUK_HARRAY_SET_LENGTH_WRITABLE(h)     do { (h)->length_nonwritable = 0; } while (0)
-#define DUK_HARRAY_SET_LENGTH_NONWRITABLE(h)  do { (h)->length_nonwritable = 1; } while (0)
+#define DUK_HARRAY_LENGTH_WRITABLE(h)    (!(h)->length_nonwritable)
+#define DUK_HARRAY_LENGTH_NONWRITABLE(h) ((h)->length_nonwritable)
+#define DUK_HARRAY_SET_LENGTH_WRITABLE(h) \
+	do { \
+		(h)->length_nonwritable = 0; \
+	} while (0)
+#define DUK_HARRAY_SET_LENGTH_NONWRITABLE(h) \
+	do { \
+		(h)->length_nonwritable = 1; \
+	} while (0)
 
 struct duk_harray {
 	/* Shared object part. */
@@ -44,4 +56,4 @@ struct duk_harray {
 	duk_bool_t length_nonwritable;
 };
 
-#endif  /* DUK_HARRAY_H_INCLUDED */
+#endif /* DUK_HARRAY_H_INCLUDED */

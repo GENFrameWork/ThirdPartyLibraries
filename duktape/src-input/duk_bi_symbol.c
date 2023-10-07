@@ -39,7 +39,7 @@ DUK_INTERNAL duk_ret_t duk_bi_symbol_constructor_shared(duk_hthread *thr) {
 	buf = (duk_uint8_t *) duk_push_fixed_buffer(thr, 1 + len + 1 + 17 + 1);
 	DUK_ASSERT(buf != NULL);
 	p = buf + 1;
-	DUK_ASSERT(desc != NULL || len == 0);  /* may be NULL if len is 0 */
+	DUK_ASSERT(desc != NULL || len == 0); /* may be NULL if len is 0 */
 	duk_memcpy_unsafe((void *) p, (const void *) desc, len);
 	p += len;
 	if (magic == 0) {
@@ -50,7 +50,9 @@ DUK_INTERNAL duk_ret_t duk_bi_symbol_constructor_shared(duk_hthread *thr) {
 		if (++thr->heap->sym_counter[0] == 0) {
 			thr->heap->sym_counter[1]++;
 		}
-		p += DUK_SPRINTF((char *) p, "\xFF" "%lx-%lx",
+		p += DUK_SPRINTF((char *) p,
+		                 "\xFF"
+		                 "%lx-%lx",
 		                 (unsigned long) thr->heap->sym_counter[1],
 		                 (unsigned long) thr->heap->sym_counter[0]);
 		if (desc == NULL) {
@@ -73,7 +75,6 @@ DUK_INTERNAL duk_ret_t duk_bi_symbol_constructor_shared(duk_hthread *thr) {
 
 DUK_LOCAL duk_hstring *duk__auto_unbox_symbol(duk_hthread *thr, duk_tval *tv_arg) {
 	duk_tval *tv;
-	duk_tval tv_val;
 	duk_hobject *h_obj;
 	duk_hstring *h_str;
 
@@ -87,10 +88,10 @@ DUK_LOCAL duk_hstring *duk__auto_unbox_symbol(duk_hthread *thr, duk_tval *tv_arg
 		h_obj = DUK_TVAL_GET_OBJECT(tv);
 		DUK_ASSERT(h_obj != NULL);
 		if (DUK_HOBJECT_GET_CLASS_NUMBER(h_obj) == DUK_HOBJECT_CLASS_SYMBOL) {
-			if (!duk_hobject_get_internal_value(thr->heap, h_obj, &tv_val)) {
+			tv = duk_hobject_get_internal_value_tval_ptr(thr->heap, h_obj);
+			if (tv == NULL) {
 				return NULL;
 			}
-			tv = &tv_val;
 		} else {
 			return NULL;
 		}
@@ -168,4 +169,4 @@ DUK_INTERNAL duk_ret_t duk_bi_symbol_toprimitive(duk_hthread *thr) {
 	return 1;
 }
 
-#endif  /* DUK_USE_SYMBOL_BUILTIN */
+#endif /* DUK_USE_SYMBOL_BUILTIN */

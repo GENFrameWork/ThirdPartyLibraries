@@ -32,7 +32,7 @@ Next, you have a list of the libraries used with:
 
 Additionally, to facilitate the use of FrameWork GEN you have available this download URL in which in a single compressed file is all the contents of this directory:
 
-[Third Party Libraries URL **http://genframework.dyndns.org/thirdpartylibraries.zip**](http://genframework.dyndns.org/thirdpartylibraries.zip)
+[Third Party Libraries URL **genframework.dyndns.org/thirdpartylibraries.zip**](genframework.dyndns.org/thirdpartylibraries.zip)
 
 
 ## List of third party libraries
@@ -40,13 +40,14 @@ Additionally, to facilitate the use of FrameWork GEN you have available this dow
 **Name                                                                           Version**   
 
 1. [**Anti-Grain Geometry (AGG)**](#AGG)									                       **2.5** 
-1. [**Duktape**](#duktape)                                                       **2.3.0**       
+1. [**Duktape**](#duktape)                                                       **2.7.0**       
 1. [**FFmpeg**](#ffmpeg)                                                         **4.0**
 1. [**freetype**](freetype)                                                      **2.12.1**
 1. [**OpenGL Extension Wrangler Library**](opengl-extension-wrangler-library)    **1.13.0**  
 1. [**InpOut 32/64**](inpout-32/64)                                              **1.5.0.1**  
 1. [**jpeglib**](#jpeglib)                                                       **9e** 
 1. [**libpcap**](#libpcap)                                                       **1.10.1** 
+1. [**npcap SDK**](#npcap)                                                       **1.13.1** 
 1. [**LibPNG**](#libpng)                                                         **1.6.40**
 1. [**Lua**](#lua)                                                               **5.3.4**  
 1. [**MySQL Connector C**](#mysql-connector-c)                                   **6.1.11** 
@@ -74,8 +75,8 @@ Anti-Grain Geometry (AGG) is an Open Source, free of charge graphic library, wri
 
 Directory        **agg**  
 Version          **2.5**    
-Web              **http://www.antigrain.com/**  
-Download URL     **http://www.antigrain.com/download/index.html**  
+Web              **www.antigrain.com/**  
+Download URL     **www.antigrain.com/download/index.html**  
 Comments   
 
 
@@ -84,9 +85,9 @@ Comments
 Duktape is an embeddable Javascript engine, with a focus on portability and compact footprint. Duktape is easy to integrate into a C/C++ project.
 
 Directory        **duktape**  
-Version          **2.3.0**  
-Web              **https://duktape.org**  
-Download URL     **https://duktape.org/download.html**   
+Version          **2.7.0**  
+Web              **duktape.org**  
+Download URL     **duktape.org/download.html**   
 Comments  
 
 
@@ -96,8 +97,8 @@ FFmpeg is the leading multimedia framework, able to decode, encode, transcode, m
 
 Directory        **ffmpeg**  
 Version          **4.0**  
-Web              **http://ffmpeg.org  https://www.ffmpeg.org/download.html#repositories**  
-Download URL     **https://ffmpeg.zeranoe.com/builds/** , **https://sourceforge.net/projects/avbuild/files/android/**  
+Web              **ffmpeg.org  www.ffmpeg.org/download.html#repositories**  
+Download URL     **ffmpeg.zeranoe.com/builds/** , **sourceforge.net/projects/avbuild/files/android/**  
 Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.      
 
@@ -108,8 +109,8 @@ FreeType is a freely available software library to render fonts.
 
 Directory        **freetype**  
 Version          **2.10.1**  
-Web              **https://freetype.org/**  
-Download URL     **http://gnuwin32.sourceforge.net/packages/freetype.htm**   
+Web              **freetype.org/**  
+Download URL     **gnuwin32.sourceforge.net/packages/freetype.htm**   
 Comments         
 
 
@@ -119,8 +120,8 @@ The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C
 
 Directory        **glew**   
 Version          **1.13.0**  
-Web              **http://glew.sourceforge.net/**  
-Download URL     **https://github.com/nigels-com/glew**  
+Web              **glew.sourceforge.net/**  
+Download URL     **github.com/nigels-com/glew**  
 Comments         
 It is necessary to modify the file glew.h.
 
@@ -131,8 +132,8 @@ InpOut32 is an open source windows DLL and Driver to give direct access to hardw
 
 Directory        **InpOutBinaries**  
 Version          **1.5.0.1**  
-Web              **http://www.highrez.co.uk/**  
-Download URL     **http://www.highrez.co.uk/downloads/inpout32/**  
+Web              **www.highrez.co.uk/**  
+Download URL     **www.highrez.co.uk/downloads/inpout32/**  
 Comments         
 Only for Windows platform. 
 
@@ -143,8 +144,8 @@ This library is distributes by IJG (is an informal group). The first version was
 
 Directory        **jpeglib**  
 Version          **9e of 16-Jan-2022**  
-Web              **http://www.ijg.org**  
-Download URL     **http://www.ijg.org/files/jpegsr9c.zip**  
+Web              **www.ijg.org**  
+Download URL     **www.ijg.org/files/jpegsr9c.zip**  
 Comments         **Create jconfig.h**  
 
 
@@ -154,8 +155,20 @@ The Packet Capture library provides a high level interface to packet capture sys
 
 Directory        **libpcap**  
 Version          **1.8.1**  
-Web              **http://www.tcpdump.org**  
-Download URL     **https://github.com/the-tcpdump-group/libpcap**  
+Web              **www.tcpdump.org**  
+Download URL     **github.com/the-tcpdump-group/libpcap**  
+Comments
+It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
+
+
+### **npcap**  (for windows)
+
+The Packet Capture library provides a high level interface to packet capture systems. All packets on the network, even those destined for other hosts, are accessible through this mechanism. It also supports saving captured packets to a savefile, and reading packets from a savefile.
+
+Directory        **npcap**  
+Version          **1.13**  
+Web              **npcap.com**  
+Download URL     **npcap.com/#download**  
 Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
@@ -166,8 +179,8 @@ LibPNG is the official PNG reference library. It supports almost all PNG feature
 
 Directory        **libpng**  
 Version          **1.6.40**  
-Web              **http://www.libpng.org/pub/png/libpng.html**  
-Download URL     **https://sourceforge.net/projects/libpng/files/libpng16/**  
+Web              **www.libpng.org/pub/png/libpng.html**  
+Download URL     **sourceforge.net/projects/libpng/files/libpng16/**  
 Comments         
 You must use the command ./configure in linux and eliminate some #defines of pngconf.h
 
@@ -178,8 +191,8 @@ Lua is a powerful, efficient, lightweight, embeddable scripting language. It sup
 
 Directory        **lua**  
 Version          **5.3.4**  
-Web              **https://www.lua.org**  
-Download URL     **https://www.lua.org/download.html**   
+Web              **www.lua.org**  
+Download URL     **www.lua.org/download.html**   
 Comments  
 
 
@@ -189,8 +202,8 @@ Connector/C (libmysqlclient) is a client library for C development of MySQL.
 
 Directory        **mysql-connector-c**  
 Version          **6.1.11**  
-Web              **https://www.mysql.com**  
-Download URL     **https://dev.mysql.com/downloads/connector/c/** 
+Web              **www.mysql.com**  
+Download URL     **dev.mysql.com/downloads/connector/c/** 
 Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
@@ -201,8 +214,8 @@ The Packet Capture library for windows provides a high level interface to packet
 
 Directory        **npcap**  
 Version          **1.60**  
-Web              **https://nmap.org/npcap/**  
-Download URL     **https://nmap.org/npcap/dist/npcap-sdk-1.12.zip**  
+Web              **nmap.org/npcap/**  
+Download URL     **nmap.org/npcap/dist/npcap-sdk-1.12.zip**  
 Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
@@ -213,8 +226,8 @@ OpenAL provides capabilities for playing audio in a virtual 3D environment. Dist
 
 Directory        **openal-soft**  
 Version          **1.1**  
-Web              **http://openal-soft.org/**  
-Download URL     **https://github.com/kcat/openal-soft**  
+Web              **openal-soft.org/**  
+Download URL     **github.com/kcat/openal-soft**  
 Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
@@ -225,8 +238,8 @@ API and Extension registries for the OpenGL family APIs - OpenGL, OpenGL ES, and
 
 Directory        **OpenGL-Registry**  
 Version          **Unknown**  
-Web              **https://www.khronos.org/registry/OpenGL/**  
-Download URL     **https://github.com/KhronosGroup/OpenGL-Registry**  
+Web              **www.khronos.org/registry/OpenGL/**  
+Download URL     **github.com/KhronosGroup/OpenGL-Registry**  
 Comments
 Only the header glext.h is used.
 
@@ -237,8 +250,8 @@ LibPQ is part of the official PostgreSQL GIT repository. It´s the interface/con
 postgres Connector  
 Directory        **postgres**  
 Version          **11.1**  
-Web              **https://www.postgresql.org/**  
-Download URL     **https://www.postgresql.org/ftp/source/**   
+Web              **www.postgresql.org/**  
+Download URL     **www.postgresql.org/ftp/source/**   
 Comments
 It´s neccesary download the binary files. Used dinamic librarys to run GEN applications.
 
@@ -249,8 +262,8 @@ Userspace Raspberry Pi library for controlling WS281X LEDs. This includes WS2812
 
 Directory        **rpi_ws281x**  
 Version          **n/a**  
-Web              **https://github.com/jgarff/rpi_ws281x**  
-Download URL     **https://github.com/jgarff/rpi_ws281x/archive/refs/heads/master.zip**   
+Web              **github.com/jgarff/rpi_ws281x**  
+Download URL     **github.com/jgarff/rpi_ws281x/archive/refs/heads/master.zip**   
 Comments
 Version only for Raspberry Pi.
 
@@ -261,8 +274,8 @@ SQLite is a self-contained, high-reliability, embedded, full-featured, public-do
 
 Directory        **sqlite**  
 Version          **3.23.1**  
-Web              **https://www.sqlite.org/index.html**  
-Download URL     **https://www.sqlite.org/download.html**   
+Web              **www.sqlite.org/index.html**  
+Download URL     **www.sqlite.org/download.html**   
 Comments
 
 
@@ -273,8 +286,8 @@ so the calling app does not need to know the internals.
 
 Directory        **StackWalker**  
 Version          **v5**  
-Web              **https://www.codeproject.com/Articles/11132/Walking-the-callstack**  
-Download URL     **https://www.codeproject.com/KB/threads/StackWalker/stackwalker.zip**   
+Web              **www.codeproject.com/Articles/11132/Walking-the-callstack**  
+Download URL     **www.codeproject.com/KB/threads/StackWalker/stackwalker.zip**   
 Comments         
 This librarys are only for WINDOWS.
 
@@ -285,8 +298,8 @@ Collection of libraries for C/C++- Most libraries by stb, except: stb_dxt by Fab
 
 Directory        **stb**  
 Version          **2.31**  
-Web              **http://nothings.org/stb_vorbis/**  
-Download URL     **https://github.com/nothings/stb**  
+Web              **nothings.org/stb_vorbis/**  
+Download URL     **github.com/nothings/stb**  
 Comments         
 Need add stb_vorbis.h (OGG file format) to GEN compile. 
 
@@ -297,8 +310,8 @@ Toast++ is a set of C++ classes to provide an encapsulation for Toast Notificati
 
 Directory        **Toast++**  
 Version          **1.1**  
-Web              **http://www.naughter.com/toastpp.html**    
-Download URL     **http://www.naughter.com/download/toastpp.zip**     
+Web              **www.naughter.com/toastpp.html**    
+Download URL     **www.naughter.com/download/toastpp.zip**     
 Comments         
 This librarys are only for WINDOWS.
 
@@ -309,8 +322,8 @@ A Massively Spiffy Yet Delicately Unobtrusive Compression Library. It was writte
 
 Directory        **zlib**    
 Version          **1.2.11**      
-Web              **https://zlib.net/**    
-Download URL     **https://github.com/madler/zlib**    
+Web              **zlib.net/**    
+Download URL     **github.com/madler/zlib**    
 Comments         
 You must use the command ./configure in linux.  GEN use also some .H + .C of the subdirectory contrib/minicom. 
 
@@ -321,8 +334,8 @@ The Android NDK (Native Developed Kit) is a toolset that lets you implement part
 
 Directory        **android-ndk**   
 Version          **r17**   
-Web              **https://developer.android.com/ndk/**    
-Download URL     **https://developer.android.com/ndk/downloads/**    
+Web              **developer.android.com/ndk/**    
+Download URL     **developer.android.com/ndk/downloads/**    
 Comments
 Only for Android platform. Only use the Android **Native App Glue**.
 
@@ -333,8 +346,8 @@ GoogleTest is a testing framework developed by the Testing Technology team with 
 
 Directory        **GoogleTest**    
 Version          **1.12.1**   
-Web              **https://github.com/google/googletest**    
-Download URL     **https://github.com/google/googletest**    
+Web              **github.com/google/googletest**    
+Download URL     **github.com/google/googletest**    
 Comments
 
 
@@ -345,8 +358,8 @@ Espressif provides basic hardware and software resources to help application dev
 
 Directory        **ESP-IDF**    
 Version          **v5.1**   
-Web              **https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html**    
-Download URL     **https://github.com/espressif/esp-idf**    
+Web              **docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html**    
+Download URL     **github.com/espressif/esp-idf**    
 Comments
 
 

@@ -5,18 +5,25 @@
 #if !defined(DUK_HENV_H_INCLUDED)
 #define DUK_HENV_H_INCLUDED
 
-#define DUK_ASSERT_HDECENV_VALID(h) do { \
-		DUK_ASSERT((h) != NULL); \
-		DUK_ASSERT(DUK_HOBJECT_IS_DECENV((duk_hobject *) (h))); \
-		DUK_ASSERT((h)->thread == NULL || (h)->varmap != NULL); \
+#if defined(DUK_USE_ASSERTIONS)
+DUK_INTERNAL_DECL void duk_hdecenv_assert_valid(duk_hdecenv *h);
+DUK_INTERNAL_DECL void duk_hobjenv_assert_valid(duk_hobjenv *h);
+#define DUK_HDECENV_ASSERT_VALID(h) \
+	do { \
+		duk_hdecenv_assert_valid((h)); \
 	} while (0)
-
-#define DUK_ASSERT_HOBJENV_VALID(h) do { \
-		DUK_ASSERT((h) != NULL); \
-		DUK_ASSERT(DUK_HOBJECT_IS_OBJENV((duk_hobject *) (h))); \
-		DUK_ASSERT((h)->target != NULL); \
-		DUK_ASSERT((h)->has_this == 0 || (h)->has_this == 1); \
+#define DUK_HOBJENV_ASSERT_VALID(h) \
+	do { \
+		duk_hobjenv_assert_valid((h)); \
 	} while (0)
+#else
+#define DUK_HDECENV_ASSERT_VALID(h) \
+	do { \
+	} while (0)
+#define DUK_HOBJENV_ASSERT_VALID(h) \
+	do { \
+	} while (0)
+#endif
 
 struct duk_hdecenv {
 	/* Shared object part. */
@@ -45,4 +52,4 @@ struct duk_hobjenv {
 	duk_bool_t has_this;
 };
 
-#endif  /* DUK_HENV_H_INCLUDED */
+#endif /* DUK_HENV_H_INCLUDED */

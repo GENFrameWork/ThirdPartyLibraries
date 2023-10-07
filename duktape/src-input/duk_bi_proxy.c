@@ -13,7 +13,7 @@ DUK_INTERNAL void duk_proxy_ownkeys_postprocess(duk_hthread *thr, duk_hobject *h
 	duk_uarridx_t i, len, idx;
 	duk_propdesc desc;
 
-	DUK_ASSERT_CTX_VALID(thr);
+	DUK_CTX_ASSERT_VALID(thr);
 	DUK_ASSERT(h_proxy_target != NULL);
 
 	len = (duk_uarridx_t) duk_get_length(thr, -1);
@@ -63,10 +63,12 @@ DUK_INTERNAL void duk_proxy_ownkeys_postprocess(duk_hthread *thr, duk_hobject *h
 		}
 
 		/* [ obj trap_result res_arr propname ] */
-		duk_put_prop_index(thr, -2, idx++);
+		duk_push_uarridx(thr, idx++);
+		duk_insert(thr, -2);
+		duk_def_prop(thr, -3, DUK_DEFPROP_HAVE_VALUE | DUK_DEFPROP_SET_WEC);
 		continue;
 
-	 skip_key:
+	skip_key:
 		duk_pop(thr);
 		continue;
 	}
@@ -83,14 +85,14 @@ DUK_INTERNAL void duk_proxy_ownkeys_postprocess(duk_hthread *thr, duk_hobject *h
 	 * handled above.
 	 */
 }
-#endif  /* DUK_USE_ES6_PROXY */
+#endif /* DUK_USE_ES6_PROXY */
 
 #if defined(DUK_USE_ES6_PROXY)
 DUK_INTERNAL duk_ret_t duk_bi_proxy_constructor(duk_hthread *thr) {
-	DUK_ASSERT_TOP(thr, 2);  /* [ target handler ] */
+	DUK_ASSERT_TOP(thr, 2); /* [ target handler ] */
 
 	duk_require_constructor_call(thr);
-	duk_push_proxy(thr, 0 /*flags*/);  /* [ target handler ] -> [ proxy ] */
-	return 1;  /* replacement */
+	duk_push_proxy(thr, 0 /*flags*/); /* [ target handler ] -> [ proxy ] */
+	return 1; /* replacement */
 }
-#endif  /* DUK_USE_ES6_PROXY */
+#endif /* DUK_USE_ES6_PROXY */

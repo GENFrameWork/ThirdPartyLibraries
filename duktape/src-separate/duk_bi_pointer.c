@@ -23,12 +23,11 @@ DUK_INTERNAL duk_ret_t duk_bi_pointer_constructor(duk_hthread *thr) {
 
 	if (duk_is_constructor_call(thr)) {
 		(void) duk_push_object_helper(thr,
-		                              DUK_HOBJECT_FLAG_EXTENSIBLE |
-		                              DUK_HOBJECT_FLAG_FASTREFS |
-		                              DUK_HOBJECT_CLASS_AS_FLAGS(DUK_HOBJECT_CLASS_POINTER),
+		                              DUK_HOBJECT_FLAG_EXTENSIBLE | DUK_HOBJECT_FLAG_FASTREFS |
+		                                  DUK_HOBJECT_CLASS_AS_FLAGS(DUK_HOBJECT_CLASS_POINTER),
 		                              DUK_BIDX_POINTER_PROTOTYPE);
 
-		/* Pointer object internal value is immutable */
+		/* Pointer object internal value is immutable. */
 		duk_dup_0(thr);
 		duk_xdef_prop_stridx_short(thr, -2, DUK_STRIDX_INT_VALUE, DUK_PROPDESC_FLAGS_NONE);
 	}
@@ -60,7 +59,7 @@ DUK_INTERNAL duk_ret_t duk_bi_pointer_prototype_tostring_shared(duk_hthread *thr
 			goto type_error;
 		}
 
-		duk_get_prop_stridx_short(thr, -1, DUK_STRIDX_INT_VALUE);
+		duk_xget_owndataprop_stridx_short(thr, -1, DUK_STRIDX_INT_VALUE);
 	} else {
 		goto type_error;
 	}
@@ -70,6 +69,6 @@ DUK_INTERNAL duk_ret_t duk_bi_pointer_prototype_tostring_shared(duk_hthread *thr
 	}
 	return 1;
 
- type_error:
+type_error:
 	DUK_DCERROR_TYPE_INVALID_ARGS(thr);
 }

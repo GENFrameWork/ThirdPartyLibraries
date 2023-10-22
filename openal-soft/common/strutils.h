@@ -1,22 +1,22 @@
 #ifndef AL_STRUTILS_H
 #define AL_STRUTILS_H
 
-#include <optional>
 #include <string>
 
+#include "aloptional.h"
+
 #ifdef _WIN32
-#include <string_view>
 #include <wchar.h>
 
-std::string wstr_to_utf8(std::wstring_view wstr);
-std::wstring utf8_to_wstr(std::string_view str);
+std::string wstr_to_utf8(const wchar_t *wstr);
+std::wstring utf8_to_wstr(const char *str);
 #endif
 
 namespace al {
 
-std::optional<std::string> getenv(const char *envname);
+al::optional<std::string> getenv(const char *envname);
 #ifdef _WIN32
-std::optional<std::wstring> getenv(const wchar_t *envname);
+al::optional<std::wstring> getenv(const wchar_t *envname);
 #endif
 
 } // namespace al

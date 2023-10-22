@@ -3,7 +3,6 @@
 
 #include <atomic>
 #include <cstddef>
-#include <string_view>
 
 #include "AL/al.h"
 #include "AL/alc.h"
@@ -46,7 +45,6 @@ enum class SlotState : ALenum {
 };
 
 struct ALeffectslot {
-    ALuint EffectId{};
     float Gain{1.0f};
     bool  AuxSendAuto{true};
     ALeffectslot *Target{nullptr};
@@ -75,11 +73,8 @@ struct ALeffectslot {
     ALeffectslot& operator=(const ALeffectslot&) = delete;
     ~ALeffectslot();
 
-    ALenum initEffect(ALuint effectId, ALenum effectType, const EffectProps &effectProps,
-        ALCcontext *context);
+    ALenum initEffect(ALenum effectType, const EffectProps &effectProps, ALCcontext *context);
     void updateProps(ALCcontext *context);
-
-    static void SetName(ALCcontext *context, ALuint id, std::string_view name);
 
     /* This can be new'd for the context's default effect slot. */
     DEF_NEWDEL(ALeffectslot)

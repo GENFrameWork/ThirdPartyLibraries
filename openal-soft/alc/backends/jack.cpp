@@ -22,26 +22,23 @@
 
 #include "jack.h"
 
-#include <array>
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
 #include <memory.h>
-#include <mutex>
+
+#include <array>
 #include <thread>
 #include <functional>
-#include <vector>
 
-#include "albit.h"
 #include "alc/alconfig.h"
 #include "alnumeric.h"
-#include "alsem.h"
-#include "althrd_setname.h"
 #include "core/device.h"
 #include "core/helpers.h"
 #include "core/logging.h"
 #include "dynload.h"
 #include "ringbuffer.h"
+#include "threads.h"
 
 #include <jack/jack.h>
 #include <jack/ringbuffer.h>
@@ -129,7 +126,7 @@ bool jack_load()
 
         error = false;
 #define LOAD_FUNC(f) do {                                                     \
-    p##f = al::bit_cast<decltype(p##f)>(GetSymbol(jack_handle, #f));          \
+    p##f = reinterpret_cast<decltype(p##f)>(GetSymbol(jack_handle, #f));      \
     if(p##f == nullptr) {                                                     \
         error = true;                                                         \
         missing_funcs += "\n" #f;                                             \
@@ -138,7 +135,7 @@ bool jack_load()
         JACK_FUNCS(LOAD_FUNC);
 #undef LOAD_FUNC
         /* Optional symbols. These don't exist in all versions of JACK. */
-#define LOAD_SYM(f) p##f = al::bit_cast<decltype(p##f)>(GetSymbol(jack_handle, #f))
+#define LOAD_SYM(f) p##f = reinterpret_cast<decltype(p##f)>(GetSymbol(jack_handle, #f))
         LOAD_SYM(jack_error_callback);
 #undef LOAD_SYM
 
@@ -170,10 +167,10 @@ struct DeviceEntry {
     { }
 };
 
-std::vector<DeviceEntry> PlaybackList;
+al::vector<DeviceEntry> PlaybackList;
 
 
-void EnumerateDevices(jack_client_t *client, std::vector<DeviceEntry> &list)
+void EnumerateDevices(jack_client_t *client, al::vector<DeviceEntry> &list)
 {
     std::remove_reference_t<decltype(list)>{}.swap(list);
 
@@ -298,7 +295,7 @@ struct JackPlayback final : public BackendBase {
 
     int mixerProc();
 
-    void open(std::string_view name) override;
+    void open(const char *name) override;
     bool reset() override;
     void start() override;
     void stop() override;
@@ -460,7 +457,7 @@ int JackPlayback::mixerProc()
 }
 
 
-void JackPlayback::open(std::string_view name)
+void JackPlayback::open(const char *name)
 {
     if(!mClient)
     {
@@ -484,9 +481,9 @@ void JackPlayback::open(std::string_view name)
     if(PlaybackList.empty())
         EnumerateDevices(mClient, PlaybackList);
 
-    if(name.empty() && !PlaybackList.empty())
+    if(!name && !PlaybackList.empty())
     {
-        name = PlaybackList[0].mName;
+        name = PlaybackList[0].mName.c_str();
         mPortPattern = PlaybackList[0].mPattern;
     }
     else
@@ -496,9 +493,13 @@ void JackPlayback::open(std::string_view name)
         auto iter = std::find_if(PlaybackList.cbegin(), PlaybackList.cend(), check_name);
         if(iter == PlaybackList.cend())
             throw al::backend_exception{al::backend_error::NoDevice,
-                "Device name \"%.*s\" not found", static_cast<int>(name.length()), name.data()};
+                "Device name \"%s\" not found", name?name:""};
         mPortPattern = iter->mPattern;
     }
+
+    mRTMixing = GetConfigValueBool(name, "jack", "rt-mix", true);
+    jack_set_process_callback(mClient,
+        mRTMixing ? &JackPlayback::processRtC : &JackPlayback::processC, this);
 
     mDevice->DeviceName = name;
 }
@@ -509,10 +510,6 @@ bool JackPlayback::reset()
     { if(port) jack_port_unregister(mClient, port); };
     std::for_each(mPort.begin(), mPort.end(), unregister_port);
     mPort.fill(nullptr);
-
-    mRTMixing = GetConfigValueBool(mDevice->DeviceName.c_str(), "jack", "rt-mix", true);
-    jack_set_process_callback(mClient,
-        mRTMixing ? &JackPlayback::processRtC : &JackPlayback::processC, this);
 
     /* Ignore the requested buffer metrics and just keep one JACK-sized buffer
      * ready for when requested.
@@ -589,7 +586,7 @@ void JackPlayback::start()
             throw al::backend_exception{al::backend_error::DeviceError, "No playback ports found"};
         }
 
-        for(size_t i{0};i < std::size(mPort) && mPort[i];++i)
+        for(size_t i{0};i < al::size(mPort) && mPort[i];++i)
         {
             if(!pnames[i])
             {

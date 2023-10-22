@@ -30,10 +30,10 @@
 #include <functional>
 #include <thread>
 
-#include "althrd_setname.h"
-#include "almalloc.h"
 #include "core/device.h"
+#include "almalloc.h"
 #include "core/helpers.h"
+#include "threads.h"
 
 
 namespace {
@@ -50,7 +50,7 @@ struct NullBackend final : public BackendBase {
 
     int mixerProc();
 
-    void open(std::string_view name) override;
+    void open(const char *name) override;
     bool reset() override;
     void start() override;
     void stop() override;
@@ -105,13 +105,13 @@ int NullBackend::mixerProc()
 }
 
 
-void NullBackend::open(std::string_view name)
+void NullBackend::open(const char *name)
 {
-    if(name.empty())
+    if(!name)
         name = nullDevice;
-    else if(name != nullDevice)
-        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%.*s\" not found",
-            static_cast<int>(name.length()), name.data()};
+    else if(strcmp(name, nullDevice) != 0)
+        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%s\" not found",
+            name};
 
     mDevice->DeviceName = name;
 }

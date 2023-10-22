@@ -9,9 +9,7 @@
 #include "alcomplex.h"
 #include "alnumeric.h"
 #include "opthelpers.h"
-#include "pffft.h"
 #include "phase_shifter.h"
-#include "vector.h"
 
 
 UhjQualityType UhjDecodeQuality{UhjQualityType::Default};
@@ -19,124 +17,6 @@ UhjQualityType UhjEncodeQuality{UhjQualityType::Default};
 
 
 namespace {
-
-struct PFFFTSetupDeleter {
-    void operator()(PFFFT_Setup *ptr) { pffft_destroy_setup(ptr); }
-};
-using PFFFTSetupPtr = std::unique_ptr<PFFFT_Setup,PFFFTSetupDeleter>;
-
-/* Convolution is implemented using a segmented overlap-add method. The filter
- * response is broken up into multiple segments of 128 samples, and each
- * segment has an FFT applied with a 256-sample buffer (the latter half left
- * silent) to get its frequency-domain response.
- *
- * Input samples are similarly broken up into 128-sample segments, with a 256-
- * sample FFT applied to each new incoming segment to get its frequency-domain
- * response. A history of FFT'd input segments is maintained, equal to the
- * number of filter response segments.
- *
- * To apply the convolution, each filter response segment is convolved with its
- * paired input segment (using complex multiplies, far cheaper than time-domain
- * FIRs), accumulating into an FFT buffer. The input history is then shifted to
- * align with later filter response segments for the next input segment.
- *
- * An inverse FFT is then applied to the accumulated FFT buffer to get a 256-
- * sample time-domain response for output, which is split in two halves. The
- * first half is the 128-sample output, and the second half is a 128-sample
- * (really, 127) delayed extension, which gets added to the output next time.
- * Convolving two time-domain responses of length N results in a time-domain
- * signal of length N*2 - 1, and this holds true regardless of the convolution
- * being applied in the frequency domain, so these "overflow" samples need to
- * be accounted for.
- *
- * To avoid a delay with gathering enough input samples to apply an FFT with,
- * the first segment is applied directly in the time-domain as the samples come
- * in. Once enough have been retrieved, the FFT is applied on the input and
- * it's paired with the remaining (FFT'd) filter segments for processing.
- */
-template<size_t N>
-struct SplitFilter {
-    static constexpr size_t sFftLength{256};
-    static constexpr size_t sSampleLength{sFftLength / 2};
-    static constexpr size_t sNumSegments{N/sSampleLength - 1};
-    static_assert(N >= sFftLength);
-    static_assert((N % sSampleLength) == 0);
-
-    PhaseShifterT<sSampleLength> mPShift{NoInit{}};
-    PFFFTSetupPtr mFft;
-    alignas(16) std::array<float,sFftLength*sNumSegments> mFilterData;
-
-    SplitFilter()
-    {
-        mFft = PFFFTSetupPtr{pffft_new_setup(sFftLength, PFFFT_REAL)};
-
-        using complex_d = std::complex<double>;
-        constexpr size_t fft_size{N};
-        constexpr size_t half_size{fft_size / 2};
-
-        /* To set up the filter, we need to generate the desired response.
-         * Start with a pure delay that passes all frequencies through.
-         */
-        auto fftBuffer = std::make_unique<complex_d[]>(fft_size);
-        std::fill_n(fftBuffer.get(), fft_size, complex_d{});
-        fftBuffer[half_size] = 1.0;
-
-        /* Convert to the frequency domain, shift the phase of each bin by +90
-         * degrees, then convert back to the time domain.
-         *
-         * NOTE: The 0- and half-frequency are always real for a real signal.
-         * To maintain that and their phase (0 or pi), they're heavily
-         * attenuated instead of shifted like the others.
-         */
-        forward_fft(al::span{fftBuffer.get(), fft_size});
-        fftBuffer[0] *= std::numeric_limits<double>::epsilon();
-        for(size_t i{1};i < half_size;++i)
-            fftBuffer[i] = complex_d{-fftBuffer[i].imag(), fftBuffer[i].real()};
-        fftBuffer[half_size] *= std::numeric_limits<double>::epsilon();
-        for(size_t i{half_size+1};i < fft_size;++i)
-            fftBuffer[i] = std::conj(fftBuffer[fft_size - i]);
-        inverse_fft(al::span{fftBuffer.get(), fft_size});
-
-        /* Store the first segment of the filter to apply in the time-domain
-         * (backwards for more efficient processing).
-         */
-        auto fftiter = fftBuffer.get() + sSampleLength - 1;
-        for(float &coeff : mPShift.mCoeffs)
-        {
-            coeff = static_cast<float>(fftiter->real() / double{fft_size});
-            fftiter -= 2;
-        }
-
-        /* The remaining segments of the filter are converted back to the
-         * frequency domain, each on their own (0 stuffed).
-         */
-        auto fftTmp = al::vector<float,16>(sFftLength);
-        float *filter{mFilterData.data()};
-        for(size_t s{0};s < sNumSegments;++s)
-        {
-            for(size_t i{0};i < sSampleLength;++i)
-                fftBuffer[i] = fftBuffer[sSampleLength*(s+1) + i].real() / double{fft_size};
-            std::fill_n(fftBuffer.get()+sSampleLength, sSampleLength, complex_d{});
-            forward_fft(al::span{fftBuffer.get(), sFftLength});
-
-            /* Convert to zdomain data for PFFFT, scaled by the FFT length so
-             * the iFFT result will be normalized.
-             */
-            for(size_t i{0};i < sSampleLength;++i)
-            {
-                fftTmp[i*2 + 0] = static_cast<float>(fftBuffer[i].real()) / float{sFftLength};
-                fftTmp[i*2 + 1] = static_cast<float>((i == 0) ? fftBuffer[sSampleLength].real()
-                    : fftBuffer[i].imag()) / float{sFftLength};
-            }
-            pffft_zreorder(mFft.get(), fftTmp.data(), filter, PFFFT_BACKWARD);
-            filter += sFftLength;
-        }
-    }
-};
-
-template<size_t N>
-const SplitFilter<N> gSplitFilter;
-
 
 const PhaseShifterT<UhjLength256> PShiftLq{};
 const PhaseShifterT<UhjLength512> PShiftHq{};
@@ -149,18 +29,23 @@ template<>
 struct GetPhaseShifter<UhjLength512> { static auto& Get() noexcept { return PShiftHq; } };
 
 
+constexpr float square(float x) noexcept
+{ return x*x; }
+
 /* Filter coefficients for the 'base' all-pass IIR, which applies a frequency-
  * dependent phase-shift of N degrees. The output of the filter requires a 1-
  * sample delay.
  */
 constexpr std::array<float,4> Filter1Coeff{{
-    0.479400865589f, 0.876218493539f, 0.976597589508f, 0.997499255936f
+    square(0.6923878f), square(0.9360654322959f), square(0.9882295226860f),
+    square(0.9987488452737f)
 }};
 /* Filter coefficients for the offset all-pass IIR, which applies a frequency-
  * dependent phase-shift of N+90 degrees.
  */
 constexpr std::array<float,4> Filter2Coeff{{
-    0.161758498368f, 0.733028932341f, 0.945349700329f, 0.990599156684f
+    square(0.4021921162426f), square(0.8561710882420f), square(0.9722909545651f),
+    square(0.9952884791278f)
 }};
 
 } // namespace
@@ -207,10 +92,7 @@ template<size_t N>
 void UhjEncoder<N>::encode(float *LeftOut, float *RightOut,
     const al::span<const float*const,3> InSamples, const size_t SamplesToDo)
 {
-    static constexpr auto &Filter = gSplitFilter<N>;
-    static_assert(sFftLength == Filter.sFftLength);
-    static_assert(sSegmentSize == Filter.sSampleLength);
-    static_assert(sNumSegments == Filter.sNumSegments);
+    const auto &PShift = GetPhaseShifter<N>::Get();
 
     ASSUME(SamplesToDo > 0);
 
@@ -227,78 +109,10 @@ void UhjEncoder<N>::encode(float *LeftOut, float *RightOut,
         mS[i] = 0.9396926f*mW[i] + 0.1855740f*mX[i];
 
     /* Precompute j(-0.3420201*W + 0.5098604*X) and store in mD. */
-    for(size_t base{0};base < SamplesToDo;)
-    {
-        const size_t todo{minz(sSegmentSize-mFifoPos, SamplesToDo-base)};
-
-        /* Transform the non-delayed input and store in the later half of the
-         * filter input.
-         */
-        std::transform(winput+base, winput+base+todo, xinput+base,
-            mWXIn.begin()+sSegmentSize + mFifoPos,
-            [](const float w, const float x) noexcept -> float
-            { return -0.3420201f*w + 0.5098604f*x; });
-
-        /* Apply the first segment of the filter in the time domain. */
-        auto buf_iter = mD.begin() + base;
-        Filter.mPShift.process({buf_iter, todo}, mWXIn.data()+1 + mFifoPos);
-
-        /* Add the other segments of the filter that were previously processed
-         * by the FFT.
-         */
-        auto fifo_iter = mWXOut.begin() + mFifoPos;
-        std::transform(fifo_iter, fifo_iter+todo, buf_iter, buf_iter, std::plus<>{});
-
-        mFifoPos += todo;
-        base += todo;
-
-        /* Check whether the input buffer is filled with new samples. */
-        if(mFifoPos < sSegmentSize) break;
-        mFifoPos = 0;
-
-        /* Move the newest input to the front for the next iteration's history. */
-        std::copy(mWXIn.cbegin()+sSegmentSize, mWXIn.cend(), mWXIn.begin());
-        std::fill(mWXIn.begin()+sSegmentSize, mWXIn.end(), 0.0f);
-
-        /* Overwrite the stale/oldest FFT'd segment with the newest input. */
-        const size_t curseg{mCurrentSegment};
-        pffft_transform(Filter.mFft.get(), mWXIn.data(), mWXHistory.data() + curseg*sFftLength,
-            mWorkData.data(), PFFFT_FORWARD);
-
-        /* Convolve each input segment with its IR filter counterpart (aligned
-         * in time).
-         */
-        mFftBuffer.fill(0.0f);
-        const float *filter{Filter.mFilterData.data()};
-        const float *input{mWXHistory.data() + curseg*sFftLength};
-        for(size_t s{curseg};s < sNumSegments;++s)
-        {
-            pffft_zconvolve_accumulate(Filter.mFft.get(), input, filter, mFftBuffer.data());
-            input += sFftLength;
-            filter += sFftLength;
-        }
-        input = mWXHistory.data();
-        for(size_t s{0};s < curseg;++s)
-        {
-            pffft_zconvolve_accumulate(Filter.mFft.get(), input, filter, mFftBuffer.data());
-            input += sFftLength;
-            filter += sFftLength;
-        }
-
-        /* Convert back to samples, writing to the output and storing the extra
-         * for next time.
-         */
-        pffft_transform(Filter.mFft.get(), mFftBuffer.data(), mFftBuffer.data(),
-            mWorkData.data(), PFFFT_BACKWARD);
-
-        for(size_t i{0};i < sSegmentSize;++i)
-            mWXOut[i] = mFftBuffer[i] + mWXOut[sSegmentSize+i];
-        for(size_t i{0};i < sSegmentSize;++i)
-            mWXOut[sSegmentSize+i] = mFftBuffer[sSegmentSize+i];
-
-        /* Shift the input history. */
-        mCurrentSegment = curseg ? (curseg-1) : (sNumSegments-1);
-    }
+    std::transform(winput, winput+SamplesToDo, xinput, mWX.begin() + sWXInOffset,
+        [](const float w, const float x) noexcept -> float
+        { return -0.3420201f*w + 0.5098604f*x; });
+    PShift.process({mD.data(), SamplesToDo}, mWX.data());
 
     /* D = j(-0.3420201*W + 0.5098604*X) + 0.6554516*Y */
     for(size_t i{0};i < SamplesToDo;++i)
@@ -308,6 +122,7 @@ void UhjEncoder<N>::encode(float *LeftOut, float *RightOut,
     std::copy(mW.cbegin()+SamplesToDo, mW.cbegin()+SamplesToDo+sFilterDelay, mW.begin());
     std::copy(mX.cbegin()+SamplesToDo, mX.cbegin()+SamplesToDo+sFilterDelay, mX.begin());
     std::copy(mY.cbegin()+SamplesToDo, mY.cbegin()+SamplesToDo+sFilterDelay, mY.begin());
+    std::copy(mWX.cbegin()+SamplesToDo, mWX.cbegin()+SamplesToDo+sWXInOffset, mWX.begin());
 
     /* Apply a delay to the existing output to align with the input delay. */
     auto *delayBuffer = mDirectDelay.data();

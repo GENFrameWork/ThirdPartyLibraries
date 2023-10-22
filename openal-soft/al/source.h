@@ -4,10 +4,9 @@
 #include <array>
 #include <atomic>
 #include <cstddef>
-#include <deque>
 #include <iterator>
 #include <limits>
-#include <string_view>
+#include <deque>
 
 #include "AL/al.h"
 #include "AL/alc.h"
@@ -15,6 +14,7 @@
 #include "alc/alu.h"
 #include "alc/context.h"
 #include "alc/inprogext.h"
+#include "aldeque.h"
 #include "almalloc.h"
 #include "alnumeric.h"
 #include "atomic.h"
@@ -138,7 +138,7 @@ struct ALsource {
     ALenum state{AL_INITIAL};
 
     /** Source Buffer Queue head. */
-    std::deque<ALbufferQueueItem> mQueue;
+    al::deque<ALbufferQueueItem> mQueue;
 
     bool mPropsDirty{true};
 
@@ -156,8 +156,6 @@ struct ALsource {
 
     ALsource(const ALsource&) = delete;
     ALsource& operator=(const ALsource&) = delete;
-
-    static void SetName(ALCcontext *context, ALuint id, std::string_view name);
 
     DISABLE_ALLOC()
 

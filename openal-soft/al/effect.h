@@ -1,8 +1,6 @@
 #ifndef AL_EFFECT_H
 #define AL_EFFECT_H
 
-#include <string_view>
-
 #include "AL/al.h"
 #include "AL/efx.h"
 
@@ -51,8 +49,6 @@ struct ALeffect {
 
     /* Self ID */
     ALuint id{0u};
-
-    static void SetName(ALCcontext *context, ALuint id, std::string_view name);
 
     DISABLE_ALLOC()
 };

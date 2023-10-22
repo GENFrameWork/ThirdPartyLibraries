@@ -17,8 +17,17 @@
 #include "version.h"
 
 
+std::vector<DriverIfacePtr> DriverList;
+
+thread_local DriverIface *ThreadCtxDriver;
+
 enum LogLevel LogLevel = LogLevel_Error;
 FILE *LogFile;
+
+#ifdef __MINGW32__
+DriverIface *GetThreadDriver() noexcept { return ThreadCtxDriver; }
+void SetThreadDriver(DriverIface *driver) noexcept { ThreadCtxDriver = driver; }
+#endif
 
 static void LoadDriverList(void);
 
@@ -319,12 +328,13 @@ void LoadDriverList(void)
     WCHAR cwd_path[MAX_PATH+1] = L"";
     WCHAR proc_path[MAX_PATH+1] = L"";
     WCHAR sys_path[MAX_PATH+1] = L"";
+    int len;
 
     if(GetLoadedModuleDirectory(L"OpenAL32.dll", dll_path, MAX_PATH))
         TRACE("Got DLL path %ls\n", dll_path);
 
     GetCurrentDirectoryW(MAX_PATH, cwd_path);
-    auto len = wcslen(cwd_path);
+    len = lstrlenW(cwd_path);
     if(len > 0 && (cwd_path[len-1] == '\\' || cwd_path[len-1] == '/'))
         cwd_path[len-1] = '\0';
     TRACE("Got current working directory %ls\n", cwd_path);
@@ -333,7 +343,7 @@ void LoadDriverList(void)
         TRACE("Got proc path %ls\n", proc_path);
 
     GetSystemDirectoryW(sys_path, MAX_PATH);
-    len = wcslen(sys_path);
+    len = lstrlenW(sys_path);
     if(len > 0 && (sys_path[len-1] == '\\' || sys_path[len-1] == '/'))
         sys_path[len-1] = '\0';
     TRACE("Got system path %ls\n", sys_path);

@@ -2,9 +2,8 @@
 # Find the OpenSL libraries
 #
 #  This module defines the following variables and targets:
-#     OPENSL_FOUND        - True if OPENSL was found
-#     OPENSL_INCLUDE_DIRS - The OpenSL include paths
-#     OPENSL_LIBRARIES    - The OpenSL libraries to link
+#     OPENSL_FOUND     - True if OPENSL was found
+#     OpenSL::OpenSLES - The OpenSLES target
 #
 
 #=============================================================================
@@ -54,8 +53,11 @@ find_package_handle_standard_args(OpenSL REQUIRED_VARS OPENSL_LIBRARY OPENSL_INC
     OPENSL_ANDROID_INCLUDE_DIR)
 
 if(OPENSL_FOUND)
-    set(OPENSL_LIBRARIES ${OPENSL_LIBRARY})
-    set(OPENSL_INCLUDE_DIRS ${OPENSL_INCLUDE_DIR} ${OPENSL_ANDROID_INCLUDE_DIR})
+    add_library(OpenSL::OpenSLES UNKNOWN IMPORTED)
+    set_target_properties(OpenSL::OpenSLES PROPERTIES
+        IMPORTED_LOCATION ${OPENSL_LIBRARY}
+        INTERFACE_INCLUDE_DIRECTORIES ${OPENSL_INCLUDE_DIR}
+        INTERFACE_INCLUDE_DIRECTORIES ${OPENSL_ANDROID_INCLUDE_DIR})
 endif()
 
 mark_as_advanced(OPENSL_INCLUDE_DIR OPENSL_ANDROID_INCLUDE_DIR OPENSL_LIBRARY)

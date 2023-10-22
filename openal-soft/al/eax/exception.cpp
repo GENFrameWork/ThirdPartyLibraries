@@ -6,27 +6,54 @@
 #include <string>
 
 
-EaxException::EaxException(std::string_view context, std::string_view message)
+EaxException::EaxException(const char *context, const char *message)
     : std::runtime_error{make_message(context, message)}
 {
 }
 EaxException::~EaxException() = default;
 
 
-std::string EaxException::make_message(std::string_view context, std::string_view message)
+std::string EaxException::make_message(const char *context, const char *message)
 {
-    auto what = std::string{};
-    if(context.empty() && message.empty())
-        return what;
+    const auto context_size = (context ? std::string::traits_type::length(context) : 0);
+    const auto has_contex = (context_size > 0);
 
-    what.reserve((!context.empty() ? context.size() + 3 : 0) + message.length() + 1);
-    if(!context.empty())
+    const auto message_size = (message ? std::string::traits_type::length(message) : 0);
+    const auto has_message = (message_size > 0);
+
+    if (!has_contex && !has_message)
     {
-        what += "[";
-        what += context;
-        what += "] ";
+        return std::string{};
     }
-    what += message;
+
+    static constexpr char left_prefix[] = "[";
+    const auto left_prefix_size = std::string::traits_type::length(left_prefix);
+
+    static constexpr char right_prefix[] = "] ";
+    const auto right_prefix_size = std::string::traits_type::length(right_prefix);
+
+    const auto what_size =
+        (
+            has_contex ?
+            left_prefix_size + context_size + right_prefix_size :
+            0) +
+        message_size +
+        1;
+
+    auto what = std::string{};
+    what.reserve(what_size);
+
+    if (has_contex)
+    {
+        what.append(left_prefix, left_prefix_size);
+        what.append(context, context_size);
+        what.append(right_prefix, right_prefix_size);
+    }
+
+    if (has_message)
+    {
+        what.append(message, message_size);
+    }
 
     return what;
 }

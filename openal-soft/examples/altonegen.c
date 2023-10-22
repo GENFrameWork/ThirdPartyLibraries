@@ -79,72 +79,63 @@ static inline ALuint dither_rng(ALuint *seed)
     return *seed;
 }
 
-static void ApplySin(ALfloat *data, ALuint length, ALdouble g, ALuint srate, ALuint freq)
+static void ApplySin(ALfloat *data, ALdouble g, ALuint srate, ALuint freq)
 {
-    ALdouble cycles_per_sample = (ALdouble)freq / srate;
+    ALdouble smps_per_cycle = (ALdouble)srate / freq;
     ALuint i;
-    for(i = 0;i < length;i++)
+    for(i = 0;i < srate;i++)
     {
         ALdouble ival;
-        data[i] += (ALfloat)(sin(modf(i*cycles_per_sample, &ival) * 2.0*M_PI) * g);
+        data[i] += (ALfloat)(sin(modf(i/smps_per_cycle, &ival) * 2.0*M_PI) * g);
     }
 }
 
 /* Generates waveforms using additive synthesis. Each waveform is constructed
  * by summing one or more sine waves, up to (and excluding) nyquist.
  */
-static ALuint CreateWave(enum WaveType type, ALuint seconds, ALuint freq, ALuint srate,
-    ALfloat gain)
+static ALuint CreateWave(enum WaveType type, ALuint freq, ALuint srate, ALfloat gain)
 {
     ALuint seed = 22222;
-    ALuint num_samples;
     ALuint data_size;
     ALfloat *data;
     ALuint buffer;
     ALenum err;
     ALuint i;
 
-    if(seconds > INT_MAX / srate / sizeof(ALfloat))
-    {
-        fprintf(stderr, "Too many seconds: %u * %u * %zu > %d\n", seconds, srate, sizeof(ALfloat),
-            INT_MAX);
-        return 0;
-    }
-
-    num_samples = seconds * srate;
-
-    data_size = (ALuint)(num_samples * sizeof(ALfloat));
+    data_size = (ALuint)(srate * sizeof(ALfloat));
     data = calloc(1, data_size);
     switch(type)
     {
         case WT_Sine:
-            ApplySin(data, num_samples, 1.0, srate, freq);
+            ApplySin(data, 1.0, srate, freq);
             break;
         case WT_Square:
             for(i = 1;freq*i < srate/2;i+=2)
-                ApplySin(data, num_samples, 4.0/M_PI * 1.0/i, srate, freq*i);
+                ApplySin(data, 4.0/M_PI * 1.0/i, srate, freq*i);
             break;
         case WT_Sawtooth:
             for(i = 1;freq*i < srate/2;i++)
-                ApplySin(data, num_samples, 2.0/M_PI * ((i&1)*2 - 1.0) / i, srate, freq*i);
+                ApplySin(data, 2.0/M_PI * ((i&1)*2 - 1.0) / i, srate, freq*i);
             break;
         case WT_Triangle:
             for(i = 1;freq*i < srate/2;i+=2)
-                ApplySin(data, num_samples, 8.0/(M_PI*M_PI) * (1.0 - (i&2)) / (i*i), srate, freq*i);
+                ApplySin(data, 8.0/(M_PI*M_PI) * (1.0 - (i&2)) / (i*i), srate, freq*i);
             break;
         case WT_Impulse:
             /* NOTE: Impulse isn't handled using additive synthesis, and is
-             * instead just a non-0 sample. This can be useful to test (other
-             * than resampling, the ALSOFT_DEFAULT_REVERB environment variable
-             * can test the reverb response).
+             * instead just a non-0 sample at a given rate. This can still be
+             * useful to test (other than resampling, the ALSOFT_DEFAULT_REVERB
+             * environment variable can prove useful here to test the reverb
+             * response).
              */
-            data[0] = 1.0f;
+            for(i = 0;i < srate;i++)
+                data[i] = (i%(srate/freq)) ? 0.0f : 1.0f;
             break;
         case WT_WhiteNoise:
             /* NOTE: WhiteNoise is just uniform set of uncorrelated values, and
              * is not influenced by the waveform frequency.
              */
-            for(i = 0;i < num_samples;i++)
+            for(i = 0;i < srate;i++)
             {
                 ALuint rng0 = dither_rng(&seed);
                 ALuint rng1 = dither_rng(&seed);
@@ -155,7 +146,7 @@ static ALuint CreateWave(enum WaveType type, ALuint seconds, ALuint freq, ALuint
 
     if(gain != 1.0f)
     {
-        for(i = 0;i < num_samples;i++)
+        for(i = 0;i < srate;i++)
             data[i] *= gain;
     }
 
@@ -165,7 +156,7 @@ static ALuint CreateWave(enum WaveType type, ALuint seconds, ALuint freq, ALuint
     alBufferData(buffer, AL_FORMAT_MONO_FLOAT32, data, (ALsizei)data_size, (ALsizei)srate);
     free(data);
 
-    /* Check if an error occurred, and clean up if so. */
+    /* Check if an error occured, and clean up if so. */
     err = alGetError();
     if(err != AL_NO_ERROR)
     {
@@ -184,8 +175,8 @@ int main(int argc, char *argv[])
     enum WaveType wavetype = WT_Sine;
     const char *appname = argv[0];
     ALuint source, buffer;
-    ALint last_pos;
-    ALint seconds = 4;
+    ALint last_pos, num_loops;
+    ALint max_loops = 4;
     ALint srate = -1;
     ALint tone_freq = 1000;
     ALCint dev_rate;
@@ -229,9 +220,7 @@ int main(int argc, char *argv[])
         else if(i+1 < argc && strcmp(argv[i], "-t") == 0)
         {
             i++;
-            seconds = atoi(argv[i]);
-            if(seconds <= 0)
-                seconds = 4;
+            max_loops = atoi(argv[i]) - 1;
         }
         else if(i+1 < argc && (strcmp(argv[i], "--waveform") == 0 || strcmp(argv[i], "-w") == 0))
         {
@@ -292,7 +281,7 @@ int main(int argc, char *argv[])
         srate = dev_rate;
 
     /* Load the sound into a buffer. */
-    buffer = CreateWave(wavetype, (ALuint)seconds, (ALuint)tone_freq, (ALuint)srate, gain);
+    buffer = CreateWave(wavetype, (ALuint)tone_freq, (ALuint)srate, gain);
     if(!buffer)
     {
         CloseAL();
@@ -300,7 +289,7 @@ int main(int argc, char *argv[])
     }
 
     printf("Playing %dhz %s-wave tone with %dhz sample rate and %dhz output, for %d second%s...\n",
-           tone_freq, GetWaveTypeName(wavetype), srate, dev_rate, seconds, (seconds!=1)?"s":"");
+           tone_freq, GetWaveTypeName(wavetype), srate, dev_rate, max_loops+1, max_loops?"s":"");
     fflush(stdout);
 
     /* Create the source to play the sound with. */
@@ -310,19 +299,21 @@ int main(int argc, char *argv[])
     assert(alGetError()==AL_NO_ERROR && "Failed to setup sound source");
 
     /* Play the sound for a while. */
-    last_pos = -1;
+    num_loops = 0;
+    last_pos = 0;
+    alSourcei(source, AL_LOOPING, (max_loops > 0) ? AL_TRUE : AL_FALSE);
     alSourcePlay(source);
     do {
         ALint pos;
         al_nssleep(10000000);
-        alGetSourcei(source, AL_SOURCE_STATE, &state);
         alGetSourcei(source, AL_SAMPLE_OFFSET, &pos);
-        pos /= srate;
-
-        if(pos > last_pos)
+        alGetSourcei(source, AL_SOURCE_STATE, &state);
+        if(pos < last_pos && state == AL_PLAYING)
         {
-            last_pos = 0;
-            printf("%d...\n", seconds - pos);
+            ++num_loops;
+            if(num_loops >= max_loops)
+                alSourcei(source, AL_LOOPING, AL_FALSE);
+            printf("%d...\n", max_loops - num_loops + 1);
             fflush(stdout);
         }
         last_pos = pos;

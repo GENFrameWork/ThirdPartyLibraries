@@ -32,18 +32,19 @@
 #include <exception>
 #include <functional>
 #include <thread>
-#include <vector>
 
 #include "albit.h"
+#include "albyte.h"
 #include "alc/alconfig.h"
 #include "almalloc.h"
 #include "alnumeric.h"
-#include "althrd_setname.h"
 #include "core/device.h"
 #include "core/helpers.h"
 #include "core/logging.h"
 #include "opthelpers.h"
 #include "strutils.h"
+#include "threads.h"
+#include "vector.h"
 
 
 namespace {
@@ -96,7 +97,7 @@ struct WaveBackend final : public BackendBase {
 
     int mixerProc();
 
-    void open(std::string_view name) override;
+    void open(const char *name) override;
     bool reset() override;
     void start() override;
     void stop() override;
@@ -104,7 +105,7 @@ struct WaveBackend final : public BackendBase {
     FILE *mFile{nullptr};
     long mDataStart{-1};
 
-    std::vector<std::byte> mBuffer;
+    al::vector<al::byte> mBuffer;
 
     std::atomic<bool> mKillNow{true};
     std::thread mThread;
@@ -154,13 +155,13 @@ int WaveBackend::mixerProc()
 
                 if(bytesize == 2)
                 {
-                    const size_t len{mBuffer.size() & ~1_uz};
+                    const size_t len{mBuffer.size() & ~size_t{1}};
                     for(size_t i{0};i < len;i+=2)
                         std::swap(mBuffer[i], mBuffer[i+1]);
                 }
                 else if(bytesize == 4)
                 {
-                    const size_t len{mBuffer.size() & ~3_uz};
+                    const size_t len{mBuffer.size() & ~size_t{3}};
                     for(size_t i{0};i < len;i+=4)
                     {
                         std::swap(mBuffer[i  ], mBuffer[i+3]);
@@ -194,24 +195,24 @@ int WaveBackend::mixerProc()
     return 0;
 }
 
-void WaveBackend::open(std::string_view name)
+void WaveBackend::open(const char *name)
 {
     auto fname = ConfigValueStr(nullptr, "wave", "file");
     if(!fname) throw al::backend_exception{al::backend_error::NoDevice,
         "No wave output filename"};
 
-    if(name.empty())
+    if(!name)
         name = waveDevice;
-    else if(name != waveDevice)
-        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%.*s\" not found",
-            static_cast<int>(name.length()), name.data()};
+    else if(strcmp(name, waveDevice) != 0)
+        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%s\" not found",
+            name};
 
     /* There's only one "device", so if it's already open, we're done. */
     if(mFile) return;
 
 #ifdef _WIN32
     {
-        std::wstring wname{utf8_to_wstr(fname.value())};
+        std::wstring wname{utf8_to_wstr(fname->c_str())};
         mFile = _wfopen(wname.c_str(), L"wb");
     }
 #else

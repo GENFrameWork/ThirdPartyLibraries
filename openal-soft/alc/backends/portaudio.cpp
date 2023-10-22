@@ -26,7 +26,6 @@
 #include <cstdlib>
 #include <cstring>
 
-#include "albit.h"
 #include "alc/alconfig.h"
 #include "alnumeric.h"
 #include "core/device.h"
@@ -86,7 +85,7 @@ struct PortPlayback final : public BackendBase {
             framesPerBuffer, timeInfo, statusFlags);
     }
 
-    void open(std::string_view name) override;
+    void open(const char *name) override;
     bool reset() override;
     void start() override;
     void stop() override;
@@ -116,13 +115,13 @@ int PortPlayback::writeCallback(const void*, void *outputBuffer, unsigned long f
 }
 
 
-void PortPlayback::open(std::string_view name)
+void PortPlayback::open(const char *name)
 {
-    if(name.empty())
+    if(!name)
         name = pa_device;
-    else if(name != pa_device)
-        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%.*s\" not found",
-            static_cast<int>(name.length()), name.data()};
+    else if(strcmp(name, pa_device) != 0)
+        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%s\" not found",
+            name};
 
     PaStreamParameters params{};
     auto devidopt = ConfigValueInt(nullptr, "port", "device");
@@ -245,10 +244,10 @@ struct PortCapture final : public BackendBase {
             framesPerBuffer, timeInfo, statusFlags);
     }
 
-    void open(std::string_view name) override;
+    void open(const char *name) override;
     void start() override;
     void stop() override;
-    void captureSamples(std::byte *buffer, uint samples) override;
+    void captureSamples(al::byte *buffer, uint samples) override;
     uint availableSamples() override;
 
     PaStream *mStream{nullptr};
@@ -276,13 +275,13 @@ int PortCapture::readCallback(const void *inputBuffer, void*, unsigned long fram
 }
 
 
-void PortCapture::open(std::string_view name)
+void PortCapture::open(const char *name)
 {
-    if(name.empty())
+    if(!name)
         name = pa_device;
-    else if(name != pa_device)
-        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%.*s\" not found",
-            static_cast<int>(name.length()), name.data()};
+    else if(strcmp(name, pa_device) != 0)
+        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%s\" not found",
+            name};
 
     uint samples{mDevice->BufferSize};
     samples = maxu(samples, 100 * mDevice->Frequency / 1000);
@@ -349,7 +348,7 @@ void PortCapture::stop()
 uint PortCapture::availableSamples()
 { return static_cast<uint>(mRing->readSpace()); }
 
-void PortCapture::captureSamples(std::byte *buffer, uint samples)
+void PortCapture::captureSamples(al::byte *buffer, uint samples)
 { mRing->read(buffer, samples); }
 
 } // namespace
@@ -377,7 +376,7 @@ bool PortBackendFactory::init()
             return false;
 
 #define LOAD_FUNC(f) do {                                                     \
-    p##f = al::bit_cast<decltype(p##f)>(GetSymbol(pa_handle, #f));            \
+    p##f = reinterpret_cast<decltype(p##f)>(GetSymbol(pa_handle, #f));        \
     if(p##f == nullptr)                                                       \
     {                                                                         \
         CloseLib(pa_handle);                                                  \

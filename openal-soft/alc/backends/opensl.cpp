@@ -26,22 +26,20 @@
 #include <stdlib.h>
 #include <jni.h>
 
+#include <new>
 #include <array>
 #include <cstring>
-#include <mutex>
-#include <new>
 #include <thread>
 #include <functional>
 
 #include "albit.h"
 #include "alnumeric.h"
-#include "alsem.h"
-#include "althrd_setname.h"
 #include "core/device.h"
 #include "core/helpers.h"
 #include "core/logging.h"
 #include "opthelpers.h"
 #include "ringbuffer.h"
+#include "threads.h"
 
 #include <SLES/OpenSLES.h>
 #include <SLES/OpenSLES_Android.h>
@@ -161,10 +159,12 @@ struct OpenSLPlayback final : public BackendBase {
     ~OpenSLPlayback() override;
 
     void process(SLAndroidSimpleBufferQueueItf bq) noexcept;
+    static void processC(SLAndroidSimpleBufferQueueItf bq, void *context) noexcept
+    { static_cast<OpenSLPlayback*>(context)->process(bq); }
 
     int mixerProc();
 
-    void open(std::string_view name) override;
+    void open(const char *name) override;
     bool reset() override;
     void start() override;
     void stop() override;
@@ -312,13 +312,13 @@ int OpenSLPlayback::mixerProc()
 }
 
 
-void OpenSLPlayback::open(std::string_view name)
+void OpenSLPlayback::open(const char *name)
 {
-    if(name.empty())
+    if(!name)
         name = opensl_device;
-    else if(name != opensl_device)
-        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%.*s\" not found",
-            static_cast<int>(name.length()), name.data()};
+    else if(strcmp(name, opensl_device) != 0)
+        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%s\" not found",
+            name};
 
     /* There's only one device, so if it's already open, there's nothing to do. */
     if(mEngineObj) return;
@@ -564,9 +564,7 @@ void OpenSLPlayback::start()
     PrintErr(result, "bufferQueue->GetInterface");
     if(SL_RESULT_SUCCESS == result)
     {
-        result = VCALL(bufferQueue,RegisterCallback)(
-            [](SLAndroidSimpleBufferQueueItf bq, void *context) noexcept
-            { static_cast<OpenSLPlayback*>(context)->process(bq); }, this);
+        result = VCALL(bufferQueue,RegisterCallback)(&OpenSLPlayback::processC, this);
         PrintErr(result, "bufferQueue->RegisterCallback");
     }
     if(SL_RESULT_SUCCESS != result)
@@ -644,11 +642,13 @@ struct OpenSLCapture final : public BackendBase {
     ~OpenSLCapture() override;
 
     void process(SLAndroidSimpleBufferQueueItf bq) noexcept;
+    static void processC(SLAndroidSimpleBufferQueueItf bq, void *context) noexcept
+    { static_cast<OpenSLCapture*>(context)->process(bq); }
 
-    void open(std::string_view name) override;
+    void open(const char *name) override;
     void start() override;
     void stop() override;
-    void captureSamples(std::byte *buffer, uint samples) override;
+    void captureSamples(al::byte *buffer, uint samples) override;
     uint availableSamples() override;
 
     /* engine interfaces */
@@ -686,13 +686,13 @@ void OpenSLCapture::process(SLAndroidSimpleBufferQueueItf) noexcept
 }
 
 
-void OpenSLCapture::open(std::string_view name)
+void OpenSLCapture::open(const char* name)
 {
-    if(name.empty())
+    if(!name)
         name = opensl_device;
-    else if(name != opensl_device)
-        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%.*s\" not found",
-            static_cast<int>(name.length()), name.data()};
+    else if(strcmp(name, opensl_device) != 0)
+        throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%s\" not found",
+            name};
 
     SLresult result{slCreateEngine(&mEngineObj, 0, nullptr, 0, nullptr, nullptr)};
     PrintErr(result, "slCreateEngine");
@@ -813,15 +813,13 @@ void OpenSLCapture::open(std::string_view name)
     }
     if(SL_RESULT_SUCCESS == result)
     {
-        result = VCALL(bufferQueue,RegisterCallback)(
-            [](SLAndroidSimpleBufferQueueItf bq, void *context) noexcept
-            { static_cast<OpenSLCapture*>(context)->process(bq); }, this);
+        result = VCALL(bufferQueue,RegisterCallback)(&OpenSLCapture::processC, this);
         PrintErr(result, "bufferQueue->RegisterCallback");
     }
     if(SL_RESULT_SUCCESS == result)
     {
         const uint chunk_size{mDevice->UpdateSize * mFrameSize};
-        const auto silence = (mDevice->FmtType == DevFmtUByte) ? std::byte{0x80} : std::byte{0};
+        const auto silence = (mDevice->FmtType == DevFmtUByte) ? al::byte{0x80} : al::byte{0};
 
         auto data = mRing->getWriteVector();
         std::fill_n(data.first.buf, data.first.len*chunk_size, silence);
@@ -885,7 +883,7 @@ void OpenSLCapture::stop()
     }
 }
 
-void OpenSLCapture::captureSamples(std::byte *buffer, uint samples)
+void OpenSLCapture::captureSamples(al::byte *buffer, uint samples)
 {
     const uint update_size{mDevice->UpdateSize};
     const uint chunk_size{update_size * mFrameSize};
@@ -934,7 +932,7 @@ void OpenSLCapture::captureSamples(std::byte *buffer, uint samples)
         return;
 
     /* For each buffer chunk that was fully read, queue another writable buffer
-     * chunk to keep the OpenSL queue full. This is rather convoluted, as a
+     * chunk to keep the OpenSL queue full. This is rather convulated, as a
      * result of the ring buffer holding more elements than are writable at a
      * given time. The end of the write vector increments when the read pointer
      * advances, which will "expose" a previously unwritable element. So for

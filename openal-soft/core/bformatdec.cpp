@@ -16,45 +16,33 @@
 #include "opthelpers.h"
 
 
-namespace {
-
-template<typename... Ts>
-struct overloaded : Ts... { using Ts::operator()...; };
-
-template<typename... Ts>
-overloaded(Ts...) -> overloaded<Ts...>;
-
-} // namespace
-
 BFormatDec::BFormatDec(const size_t inchans, const al::span<const ChannelDec> coeffs,
     const al::span<const ChannelDec> coeffslf, const float xover_f0norm,
     std::unique_ptr<FrontStablizer> stablizer)
-    : mStablizer{std::move(stablizer)}
+    : mStablizer{std::move(stablizer)}, mDualBand{!coeffslf.empty()}, mChannelDec{inchans}
 {
-    if(coeffslf.empty())
+    if(!mDualBand)
     {
-        auto &decoder = mChannelDec.emplace<std::vector<ChannelDecoderSingle>>(inchans);
-        for(size_t j{0};j < decoder.size();++j)
+        for(size_t j{0};j < mChannelDec.size();++j)
         {
-            float *outcoeffs{decoder[j].mGains};
+            float *outcoeffs{mChannelDec[j].mGains.Single};
             for(const ChannelDec &incoeffs : coeffs)
                 *(outcoeffs++) = incoeffs[j];
         }
     }
     else
     {
-        auto &decoder = mChannelDec.emplace<std::vector<ChannelDecoderDual>>(inchans);
-        decoder[0].mXOver.init(xover_f0norm);
-        for(size_t j{1};j < decoder.size();++j)
-            decoder[j].mXOver = decoder[0].mXOver;
+        mChannelDec[0].mXOver.init(xover_f0norm);
+        for(size_t j{1};j < mChannelDec.size();++j)
+            mChannelDec[j].mXOver = mChannelDec[0].mXOver;
 
-        for(size_t j{0};j < decoder.size();++j)
+        for(size_t j{0};j < mChannelDec.size();++j)
         {
-            float *outcoeffs{decoder[j].mGains[sHFBand]};
+            float *outcoeffs{mChannelDec[j].mGains.Dual[sHFBand]};
             for(const ChannelDec &incoeffs : coeffs)
                 *(outcoeffs++) = incoeffs[j];
 
-            outcoeffs = decoder[j].mGains[sLFBand];
+            outcoeffs = mChannelDec[j].mGains.Dual[sLFBand];
             for(const ChannelDec &incoeffs : coeffslf)
                 *(outcoeffs++) = incoeffs[j];
         }
@@ -67,32 +55,30 @@ void BFormatDec::process(const al::span<FloatBufferLine> OutBuffer,
 {
     ASSUME(SamplesToDo > 0);
 
-    auto decode_dualband = [=](std::vector<ChannelDecoderDual> &decoder)
+    if(mDualBand)
     {
-        auto *input = InSamples;
         const al::span<float> hfSamples{mSamples[sHFBand].data(), SamplesToDo};
         const al::span<float> lfSamples{mSamples[sLFBand].data(), SamplesToDo};
-        for(auto &chandec : decoder)
+        for(auto &chandec : mChannelDec)
         {
-            chandec.mXOver.process({input->data(), SamplesToDo}, hfSamples.data(),
+            chandec.mXOver.process({InSamples->data(), SamplesToDo}, hfSamples.data(),
                 lfSamples.data());
-            MixSamples(hfSamples, OutBuffer, chandec.mGains[sHFBand], chandec.mGains[sHFBand],0,0);
-            MixSamples(lfSamples, OutBuffer, chandec.mGains[sLFBand], chandec.mGains[sLFBand],0,0);
-            ++input;
+            MixSamples(hfSamples, OutBuffer, chandec.mGains.Dual[sHFBand],
+                chandec.mGains.Dual[sHFBand], 0, 0);
+            MixSamples(lfSamples, OutBuffer, chandec.mGains.Dual[sLFBand],
+                chandec.mGains.Dual[sLFBand], 0, 0);
+            ++InSamples;
         }
-    };
-    auto decode_singleband = [=](std::vector<ChannelDecoderSingle> &decoder)
+    }
+    else
     {
-        auto *input = InSamples;
-        for(auto &chandec : decoder)
+        for(auto &chandec : mChannelDec)
         {
-            MixSamples({input->data(), SamplesToDo}, OutBuffer, chandec.mGains, chandec.mGains,
-                0, 0);
-            ++input;
+            MixSamples({InSamples->data(), SamplesToDo}, OutBuffer, chandec.mGains.Single,
+                chandec.mGains.Single, 0, 0);
+            ++InSamples;
         }
-    };
-
-    std::visit(overloaded{decode_dualband, decode_singleband}, mChannelDec);
+    }
 }
 
 void BFormatDec::processStablize(const al::span<FloatBufferLine> OutBuffer,

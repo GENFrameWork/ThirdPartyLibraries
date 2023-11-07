@@ -69,7 +69,7 @@ ALSOFT_CPUEXT_SSE3:BOOL=ON
 ALSOFT_CPUEXT_SSE4_1:BOOL=ON
 
 //Check for the dlopen API for loading optional libs
-ALSOFT_DLOPEN:BOOL=ON
+ALSOFT_DLOPEN:BOOL=OFF
 
 //Enable legacy EAX extensions
 ALSOFT_EAX:BOOL=ON
@@ -175,7 +175,7 @@ CMAKE_AR:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/To
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=Release
 
 //CXX compiler
 CMAKE_CXX_COMPILER:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x86/cl.exe
@@ -687,8 +687,6 @@ HAVE_ARM_NEON_H:INTERNAL=
 HAVE_CPUID_H:INTERNAL=
 //Test HAVE_CPUID_INTRINSIC
 HAVE_CPUID_INTRINSIC:INTERNAL=1
-//Have include dlfcn.h
-HAVE_DLFCN_H:INTERNAL=
 //Have include dsound.h
 HAVE_DSOUND_H:INTERNAL=1
 //Have include emmintrin.h
@@ -701,8 +699,6 @@ HAVE_GUIDDEF_H:INTERNAL=1
 HAVE_INTRIN_H:INTERNAL=1
 //Test HAVE_LIBATOMIC
 HAVE_LIBATOMIC:INTERNAL=
-//Have library dl
-HAVE_LIBDL:INTERNAL=
 //Have library m
 HAVE_LIBM:INTERNAL=
 //Have library rt

@@ -7,7 +7,7 @@
 
 # =============================================================================
 # Project: OpenAL
-# Configurations: RelWithDebInfo
+# Configurations: Release
 # =============================================================================
 # =============================================================================
 
@@ -22,7 +22,7 @@ rule CUSTOM_COMMAND
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__alrecord_RelWithDebInfo
+rule C_COMPILER__alrecord_Release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/lib/ccache/gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -32,7 +32,7 @@ rule C_COMPILER__alrecord_RelWithDebInfo
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__alrecord_RelWithDebInfo
+rule CXX_EXECUTABLE_LINKER__alrecord_Release
   command = $PRE_LINK && /usr/lib/ccache/g++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -41,7 +41,7 @@ rule CXX_EXECUTABLE_LINKER__alrecord_RelWithDebInfo
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__altonegen_RelWithDebInfo
+rule C_COMPILER__altonegen_Release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/lib/ccache/gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -51,7 +51,7 @@ rule C_COMPILER__altonegen_RelWithDebInfo
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__altonegen_RelWithDebInfo
+rule CXX_EXECUTABLE_LINKER__altonegen_Release
   command = $PRE_LINK && /usr/lib/ccache/g++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -60,7 +60,7 @@ rule CXX_EXECUTABLE_LINKER__altonegen_RelWithDebInfo
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__ex-common_RelWithDebInfo
+rule C_COMPILER__ex-common_Release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/lib/ccache/gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -70,7 +70,7 @@ rule C_COMPILER__ex-common_RelWithDebInfo
 #############################################
 # Rule for linking CXX static library.
 
-rule CXX_STATIC_LIBRARY_LINKER__ex-common_RelWithDebInfo
+rule CXX_STATIC_LIBRARY_LINKER__ex-common_Release
   command = $PRE_LINK && /usr/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
@@ -79,7 +79,7 @@ rule CXX_STATIC_LIBRARY_LINKER__ex-common_RelWithDebInfo
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__openal-info_RelWithDebInfo
+rule C_COMPILER__openal-info_Release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/lib/ccache/gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -89,7 +89,7 @@ rule C_COMPILER__openal-info_RelWithDebInfo
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__openal-info_RelWithDebInfo
+rule CXX_EXECUTABLE_LINKER__openal-info_Release
   command = $PRE_LINK && /usr/lib/ccache/g++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -98,7 +98,7 @@ rule CXX_EXECUTABLE_LINKER__openal-info_RelWithDebInfo
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__OpenAL_RelWithDebInfo
+rule CXX_COMPILER__OpenAL_Release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/lib/ccache/g++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -108,7 +108,7 @@ rule CXX_COMPILER__OpenAL_RelWithDebInfo
 #############################################
 # Rule for linking CXX static library.
 
-rule CXX_STATIC_LIBRARY_LINKER__OpenAL_RelWithDebInfo
+rule CXX_STATIC_LIBRARY_LINKER__OpenAL_Release
   command = $PRE_LINK && /usr/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
@@ -117,7 +117,7 @@ rule CXX_STATIC_LIBRARY_LINKER__OpenAL_RelWithDebInfo
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__common_RelWithDebInfo
+rule CXX_COMPILER__common_Release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/lib/ccache/g++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -127,7 +127,7 @@ rule CXX_COMPILER__common_RelWithDebInfo
 #############################################
 # Rule for linking CXX static library.
 
-rule CXX_STATIC_LIBRARY_LINKER__common_RelWithDebInfo
+rule CXX_STATIC_LIBRARY_LINKER__common_Release
   command = $PRE_LINK && /usr/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
@@ -136,7 +136,7 @@ rule CXX_STATIC_LIBRARY_LINKER__common_RelWithDebInfo
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__alsoft-config_RelWithDebInfo
+rule CXX_COMPILER__alsoft-config_Release
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/lib/ccache/g++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -146,7 +146,7 @@ rule CXX_COMPILER__alsoft-config_RelWithDebInfo
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__alsoft-config_RelWithDebInfo
+rule CXX_EXECUTABLE_LINKER__alsoft-config_Release
   command = $PRE_LINK && /usr/lib/ccache/g++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT

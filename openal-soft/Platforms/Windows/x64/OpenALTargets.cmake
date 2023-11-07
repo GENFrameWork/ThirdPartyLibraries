@@ -55,11 +55,11 @@ set_target_properties(OpenAL::OpenAL PROPERTIES
   INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:winmm>"
 )
 
-# Import target "OpenAL::OpenAL" for configuration "Debug"
-set_property(TARGET OpenAL::OpenAL APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
+# Import target "OpenAL::OpenAL" for configuration "Release"
+set_property(TARGET OpenAL::OpenAL APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(OpenAL::OpenAL PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LOCATION_DEBUG "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x64/OpenAL32.lib"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
+  IMPORTED_LOCATION_RELEASE "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x64/OpenAL32.lib"
   )
 
 # This file does not depend on other imported targets which have

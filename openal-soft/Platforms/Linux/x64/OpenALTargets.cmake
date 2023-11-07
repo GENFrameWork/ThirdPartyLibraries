@@ -50,11 +50,11 @@ set_target_properties(OpenAL::OpenAL PROPERTIES
   INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:-pthread>;/usr/lib/x86_64-linux-gnu/libasound.so;\$<LINK_ONLY:atomic>;\$<LINK_ONLY:dbus-1>;\$<LINK_ONLY:m>"
 )
 
-# Import target "OpenAL::OpenAL" for configuration "RelWithDebInfo"
-set_property(TARGET OpenAL::OpenAL APPEND PROPERTY IMPORTED_CONFIGURATIONS RELWITHDEBINFO)
+# Import target "OpenAL::OpenAL" for configuration "Release"
+set_property(TARGET OpenAL::OpenAL APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(OpenAL::OpenAL PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_RELWITHDEBINFO "CXX"
-  IMPORTED_LOCATION_RELWITHDEBINFO "/mnt/d/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Linux/x64/libopenal.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
+  IMPORTED_LOCATION_RELEASE "/mnt/d/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Linux/x64/libopenal.a"
   )
 
 # This file does not depend on other imported targets which have

@@ -109,19 +109,19 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-zbysns"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-zbysns"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-piw35g"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-piw35g"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-zbysns'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-piw35g'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_278b6
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_278b6.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_278b6.dir\\ /FS -c "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_278b6.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_278b6.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_278b6.exe /implib:cmTC_278b6.lib /pdb:cmTC_278b6.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_d2a59
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_d2a59.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_d2a59.dir\\ /FS -c "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_d2a59.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_d2a59.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_d2a59.exe /implib:cmTC_d2a59.lib /pdb:cmTC_d2a59.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -133,19 +133,19 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-p0igu7"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-p0igu7"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-sgs5an"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-sgs5an"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-p0igu7'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-sgs5an'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_af0f0
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_af0f0.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_af0f0.dir\\ /FS -c "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_af0f0.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_af0f0.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_af0f0.exe /implib:cmTC_af0f0.lib /pdb:cmTC_af0f0.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_ab5d5
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_ab5d5.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_ab5d5.dir\\ /FS -c "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_ab5d5.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_ab5d5.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_ab5d5.exe /implib:cmTC_ab5d5.lib /pdb:cmTC_ab5d5.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -157,8 +157,8 @@ events:
     checks:
       - "Performing Test HAVE___RESTRICT"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3k4mpr"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3k4mpr"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1gav9a"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1gav9a"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -166,11 +166,11 @@ events:
       variable: "HAVE___RESTRICT"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3k4mpr'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1gav9a'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_3dbe6
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -DHAVE___RESTRICT  /DWIN32 /D_WINDOWS /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_3dbe6.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_3dbe6.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-3k4mpr\\src.cxx
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_3dbe6.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_3dbe6.dir\\src.cxx.obj  /out:cmTC_3dbe6.exe /implib:cmTC_3dbe6.lib /pdb:cmTC_3dbe6.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_4ef27
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -DHAVE___RESTRICT  /DWIN32 /D_WINDOWS /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_4ef27.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_4ef27.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-1gav9a\\src.cxx
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_4ef27.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_4ef27.dir\\src.cxx.obj  /out:cmTC_4ef27.exe /implib:cmTC_4ef27.lib /pdb:cmTC_4ef27.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -182,8 +182,8 @@ events:
     checks:
       - "Performing Test HAVE_LIBATOMIC"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-g28t7z"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-g28t7z"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-mwv6go"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-mwv6go"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -191,14 +191,14 @@ events:
       variable: "HAVE_LIBATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-g28t7z'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-mwv6go'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_a2a91
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -DHAVE_LIBATOMIC  /DWIN32 /D_WINDOWS /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_a2a91.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_a2a91.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-g28t7z\\src.cxx
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_a2a91.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_a2a91.dir\\src.cxx.obj  /out:cmTC_a2a91.exe /implib:cmTC_a2a91.lib /pdb:cmTC_a2a91.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  atomic.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_a2a91.exe 
-        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_a2a91.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_a2a91.dir\\src.cxx.obj  /out:cmTC_a2a91.exe /implib:cmTC_a2a91.lib /pdb:cmTC_a2a91.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  atomic.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_a2a91.dir\\src.cxx.obj /out:cmTC_a2a91.exe /implib:cmTC_a2a91.lib /pdb:cmTC_a2a91.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console atomic.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_a2a91.dir/intermediate.manifest CMakeFiles\\cmTC_a2a91.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_3caf4
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -DHAVE_LIBATOMIC  /DWIN32 /D_WINDOWS /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_3caf4.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_3caf4.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-mwv6go\\src.cxx
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_3caf4.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_3caf4.dir\\src.cxx.obj  /out:cmTC_3caf4.exe /implib:cmTC_3caf4.lib /pdb:cmTC_3caf4.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  atomic.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_3caf4.exe 
+        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_3caf4.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_3caf4.dir\\src.cxx.obj  /out:cmTC_3caf4.exe /implib:cmTC_3caf4.lib /pdb:cmTC_3caf4.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  atomic.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_3caf4.dir\\src.cxx.obj /out:cmTC_3caf4.exe /implib:cmTC_3caf4.lib /pdb:cmTC_3caf4.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console atomic.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_3caf4.dir/intermediate.manifest CMakeFiles\\cmTC_3caf4.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: cannot open file 'atomic.lib'\x0d
         ninja: build stopped: subcommand failed.
         
@@ -213,8 +213,8 @@ events:
     checks:
       - "Performing Test HAVE_PERMISSIVE_SWITCH"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-f6n6dy"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-f6n6dy"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-lhswe3"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-lhswe3"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -222,11 +222,11 @@ events:
       variable: "HAVE_PERMISSIVE_SWITCH"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-f6n6dy'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-lhswe3'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_15e7f
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -DHAVE_PERMISSIVE_SWITCH  /DWIN32 /D_WINDOWS /EHsc  /MDd /Zi /Ob0 /Od /RTC1   /permissive- /showIncludes /FoCMakeFiles\\cmTC_15e7f.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_15e7f.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-f6n6dy\\src.cxx
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_15e7f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_15e7f.dir\\src.cxx.obj  /out:cmTC_15e7f.exe /implib:cmTC_15e7f.lib /pdb:cmTC_15e7f.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_f2e0e
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -DHAVE_PERMISSIVE_SWITCH  /DWIN32 /D_WINDOWS /EHsc  /MDd /Zi /Ob0 /Od /RTC1   /permissive- /showIncludes /FoCMakeFiles\\cmTC_f2e0e.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_f2e0e.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-lhswe3\\src.cxx
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f2e0e.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_f2e0e.dir\\src.cxx.obj  /out:cmTC_f2e0e.exe /implib:cmTC_f2e0e.lib /pdb:cmTC_f2e0e.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -237,8 +237,8 @@ events:
     checks:
       - "Looking for xmmintrin.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3rb3tq"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3rb3tq"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-9okdd4"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-9okdd4"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -246,11 +246,11 @@ events:
       variable: "HAVE_XMMINTRIN_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3rb3tq'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-9okdd4'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_45832
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_45832.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_45832.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-3rb3tq\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_45832.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_45832.dir\\CheckIncludeFile.c.obj  /out:cmTC_45832.exe /implib:cmTC_45832.lib /pdb:cmTC_45832.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_10325
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_10325.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_10325.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-9okdd4\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_10325.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_10325.dir\\CheckIncludeFile.c.obj  /out:cmTC_10325.exe /implib:cmTC_10325.lib /pdb:cmTC_10325.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -261,8 +261,8 @@ events:
     checks:
       - "Looking for emmintrin.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-oscg9u"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-oscg9u"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1b0sq5"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1b0sq5"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -270,11 +270,11 @@ events:
       variable: "HAVE_EMMINTRIN_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-oscg9u'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1b0sq5'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_cfc02
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_cfc02.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_cfc02.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-oscg9u\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_cfc02.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_cfc02.dir\\CheckIncludeFile.c.obj  /out:cmTC_cfc02.exe /implib:cmTC_cfc02.lib /pdb:cmTC_cfc02.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_a7f62
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_a7f62.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_a7f62.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-1b0sq5\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_a7f62.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_a7f62.dir\\CheckIncludeFile.c.obj  /out:cmTC_a7f62.exe /implib:cmTC_a7f62.lib /pdb:cmTC_a7f62.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -285,8 +285,8 @@ events:
     checks:
       - "Looking for pmmintrin.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jfbqlv"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jfbqlv"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3o0d5v"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3o0d5v"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -294,11 +294,11 @@ events:
       variable: "HAVE_PMMINTRIN_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jfbqlv'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-3o0d5v'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_ae5f5
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_ae5f5.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_ae5f5.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-jfbqlv\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_ae5f5.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_ae5f5.dir\\CheckIncludeFile.c.obj  /out:cmTC_ae5f5.exe /implib:cmTC_ae5f5.lib /pdb:cmTC_ae5f5.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_99549
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_99549.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_99549.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-3o0d5v\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_99549.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_99549.dir\\CheckIncludeFile.c.obj  /out:cmTC_99549.exe /implib:cmTC_99549.lib /pdb:cmTC_99549.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -309,8 +309,8 @@ events:
     checks:
       - "Looking for smmintrin.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-s3vi16"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-s3vi16"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-7f3lhl"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-7f3lhl"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -318,11 +318,11 @@ events:
       variable: "HAVE_SMMINTRIN_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-s3vi16'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-7f3lhl'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_dd3cf
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_dd3cf.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_dd3cf.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-s3vi16\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_dd3cf.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_dd3cf.dir\\CheckIncludeFile.c.obj  /out:cmTC_dd3cf.exe /implib:cmTC_dd3cf.lib /pdb:cmTC_dd3cf.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_122f9
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_122f9.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_122f9.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-7f3lhl\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_122f9.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_122f9.dir\\CheckIncludeFile.c.obj  /out:cmTC_122f9.exe /implib:cmTC_122f9.lib /pdb:cmTC_122f9.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -333,8 +333,8 @@ events:
     checks:
       - "Looking for arm_neon.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1kwz4w"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1kwz4w"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-83061t"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-83061t"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -342,12 +342,12 @@ events:
       variable: "HAVE_ARM_NEON_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-1kwz4w'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-83061t'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_2a1af
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_2a1af.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_2a1af.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-1kwz4w\\CheckIncludeFile.c
-        FAILED: CMakeFiles/cmTC_2a1af.dir/CheckIncludeFile.c.obj 
-        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_2a1af.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_2a1af.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-1kwz4w\\CheckIncludeFile.c
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_f1f90
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_f1f90.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_f1f90.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-83061t\\CheckIncludeFile.c
+        FAILED: CMakeFiles/cmTC_f1f90.dir/CheckIncludeFile.c.obj 
+        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_f1f90.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_f1f90.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-83061t\\CheckIncludeFile.c
         C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.37.32822\\include\\arm_neon.h(21): fatal error C1189: #error:  This header is specific to ARM targets
         ninja: build stopped: subcommand failed.
         
@@ -362,8 +362,8 @@ events:
     checks:
       - "Performing Test HAVE_ARCH_SSE2"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-fnpxwb"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-fnpxwb"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-xo01jd"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-xo01jd"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -371,11 +371,11 @@ events:
       variable: "HAVE_ARCH_SSE2"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-fnpxwb'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-xo01jd'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_87413
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo -DHAVE_ARCH_SSE2  /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1   /arch:SSE2 /showIncludes /FoCMakeFiles\\cmTC_87413.dir\\src.c.obj /FdCMakeFiles\\cmTC_87413.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-fnpxwb\\src.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_87413.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_87413.dir\\src.c.obj  /out:cmTC_87413.exe /implib:cmTC_87413.lib /pdb:cmTC_87413.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_4b2ad
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo -DHAVE_ARCH_SSE2  /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1   /arch:SSE2 /showIncludes /FoCMakeFiles\\cmTC_4b2ad.dir\\src.c.obj /FdCMakeFiles\\cmTC_4b2ad.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-xo01jd\\src.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_4b2ad.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_4b2ad.dir\\src.c.obj  /out:cmTC_4b2ad.exe /implib:cmTC_4b2ad.lib /pdb:cmTC_4b2ad.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -387,8 +387,8 @@ events:
     checks:
       - "Performing Test HAVE_SSE_INTRINSICS"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-epefha"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-epefha"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-6ln6iw"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-6ln6iw"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -396,11 +396,11 @@ events:
       variable: "HAVE_SSE_INTRINSICS"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-epefha'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-6ln6iw'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_2578c
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo -DHAVE_SSE_INTRINSICS  /DWIN32 /D_WINDOWS  /arch:SSE2 /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_2578c.dir\\src.c.obj /FdCMakeFiles\\cmTC_2578c.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-epefha\\src.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_2578c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_2578c.dir\\src.c.obj  /out:cmTC_2578c.exe /implib:cmTC_2578c.lib /pdb:cmTC_2578c.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_800fb
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo -DHAVE_SSE_INTRINSICS  /DWIN32 /D_WINDOWS  /arch:SSE2 /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_800fb.dir\\src.c.obj /FdCMakeFiles\\cmTC_800fb.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-6ln6iw\\src.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_800fb.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_800fb.dir\\src.c.obj  /out:cmTC_800fb.exe /implib:cmTC_800fb.lib /pdb:cmTC_800fb.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -411,8 +411,8 @@ events:
     checks:
       - "Looking for malloc.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ca5pv0"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ca5pv0"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-0kh2h1"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-0kh2h1"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -420,11 +420,11 @@ events:
       variable: "HAVE_MALLOC_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ca5pv0'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-0kh2h1'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_2e5c3
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_2e5c3.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_2e5c3.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-ca5pv0\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_2e5c3.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_2e5c3.dir\\CheckIncludeFile.c.obj  /out:cmTC_2e5c3.exe /implib:cmTC_2e5c3.lib /pdb:cmTC_2e5c3.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_12575
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_12575.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_12575.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-0kh2h1\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_12575.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_12575.dir\\CheckIncludeFile.c.obj  /out:cmTC_12575.exe /implib:cmTC_12575.lib /pdb:cmTC_12575.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -435,8 +435,8 @@ events:
     checks:
       - "Looking for cpuid.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-wj2uo2"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-wj2uo2"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-eo7pkd"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-eo7pkd"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -444,13 +444,13 @@ events:
       variable: "HAVE_CPUID_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-wj2uo2'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-eo7pkd'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_19353
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_19353.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_19353.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-wj2uo2\\CheckIncludeFile.c
-        FAILED: CMakeFiles/cmTC_19353.dir/CheckIncludeFile.c.obj 
-        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_19353.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_19353.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-wj2uo2\\CheckIncludeFile.c
-        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-wj2uo2\\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'cpuid.h': No such file or directory
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_8f2f9
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_8f2f9.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_8f2f9.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-eo7pkd\\CheckIncludeFile.c
+        FAILED: CMakeFiles/cmTC_8f2f9.dir/CheckIncludeFile.c.obj 
+        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_8f2f9.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_8f2f9.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-eo7pkd\\CheckIncludeFile.c
+        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-eo7pkd\\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'cpuid.h': No such file or directory
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -462,8 +462,8 @@ events:
     checks:
       - "Looking for intrin.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-nm6otp"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-nm6otp"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-v466zf"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-v466zf"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -471,11 +471,11 @@ events:
       variable: "HAVE_INTRIN_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-nm6otp'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-v466zf'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_a7f9b
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_a7f9b.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_a7f9b.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-nm6otp\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_a7f9b.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_a7f9b.dir\\CheckIncludeFile.c.obj  /out:cmTC_a7f9b.exe /implib:cmTC_a7f9b.lib /pdb:cmTC_a7f9b.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_9e744
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_9e744.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_9e744.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-v466zf\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_9e744.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_9e744.dir\\CheckIncludeFile.c.obj  /out:cmTC_9e744.exe /implib:cmTC_9e744.lib /pdb:cmTC_9e744.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -486,8 +486,8 @@ events:
     checks:
       - "Looking for guiddef.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-x166h2"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-x166h2"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-5llk3q"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-5llk3q"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -495,11 +495,11 @@ events:
       variable: "HAVE_GUIDDEF_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-x166h2'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-5llk3q'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_135b1
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_135b1.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_135b1.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-x166h2\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_135b1.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_135b1.dir\\CheckIncludeFile.c.obj  /out:cmTC_135b1.exe /implib:cmTC_135b1.lib /pdb:cmTC_135b1.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_b4801
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_b4801.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_b4801.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-5llk3q\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_b4801.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_b4801.dir\\CheckIncludeFile.c.obj  /out:cmTC_b4801.exe /implib:cmTC_b4801.lib /pdb:cmTC_b4801.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -510,8 +510,8 @@ events:
     checks:
       - "Looking for pow in m"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-5k5tgw"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-5k5tgw"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-4etqy2"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-4etqy2"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -519,14 +519,14 @@ events:
       variable: "HAVE_LIBM"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-5k5tgw'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-4etqy2'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_f3569
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=pow /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_f3569.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_f3569.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-5k5tgw\\CheckFunctionExists.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f3569.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_f3569.dir\\CheckFunctionExists.c.obj  /out:cmTC_f3569.exe /implib:cmTC_f3569.lib /pdb:cmTC_f3569.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  m.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_f3569.exe 
-        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f3569.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_f3569.dir\\CheckFunctionExists.c.obj  /out:cmTC_f3569.exe /implib:cmTC_f3569.lib /pdb:cmTC_f3569.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  m.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_f3569.dir\\CheckFunctionExists.c.obj /out:cmTC_f3569.exe /implib:cmTC_f3569.lib /pdb:cmTC_f3569.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console m.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_f3569.dir/intermediate.manifest CMakeFiles\\cmTC_f3569.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_46d44
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=pow /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_46d44.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_46d44.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-4etqy2\\CheckFunctionExists.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_46d44.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_46d44.dir\\CheckFunctionExists.c.obj  /out:cmTC_46d44.exe /implib:cmTC_46d44.lib /pdb:cmTC_46d44.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  m.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_46d44.exe 
+        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_46d44.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_46d44.dir\\CheckFunctionExists.c.obj  /out:cmTC_46d44.exe /implib:cmTC_46d44.lib /pdb:cmTC_46d44.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  m.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_46d44.dir\\CheckFunctionExists.c.obj /out:cmTC_46d44.exe /implib:cmTC_46d44.lib /pdb:cmTC_46d44.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console m.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_46d44.dir/intermediate.manifest CMakeFiles\\cmTC_46d44.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: cannot open file 'm.lib'\x0d
         ninja: build stopped: subcommand failed.
         
@@ -539,8 +539,8 @@ events:
     checks:
       - "Looking for clock_gettime in rt"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-am0hwd"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-am0hwd"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jt2w8s"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jt2w8s"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -548,71 +548,15 @@ events:
       variable: "HAVE_LIBRT"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-am0hwd'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jt2w8s'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_8da48
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=clock_gettime /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_8da48.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_8da48.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-am0hwd\\CheckFunctionExists.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_8da48.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_8da48.dir\\CheckFunctionExists.c.obj  /out:cmTC_8da48.exe /implib:cmTC_8da48.lib /pdb:cmTC_8da48.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  rt.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_8da48.exe 
-        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_8da48.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_8da48.dir\\CheckFunctionExists.c.obj  /out:cmTC_8da48.exe /implib:cmTC_8da48.lib /pdb:cmTC_8da48.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  rt.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_8da48.dir\\CheckFunctionExists.c.obj /out:cmTC_8da48.exe /implib:cmTC_8da48.lib /pdb:cmTC_8da48.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console rt.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_8da48.dir/intermediate.manifest CMakeFiles\\cmTC_8da48.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_f626f
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=clock_gettime /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_f626f.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_f626f.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-jt2w8s\\CheckFunctionExists.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f626f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_f626f.dir\\CheckFunctionExists.c.obj  /out:cmTC_f626f.exe /implib:cmTC_f626f.lib /pdb:cmTC_f626f.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  rt.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_f626f.exe 
+        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f626f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_f626f.dir\\CheckFunctionExists.c.obj  /out:cmTC_f626f.exe /implib:cmTC_f626f.lib /pdb:cmTC_f626f.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  rt.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_f626f.dir\\CheckFunctionExists.c.obj /out:cmTC_f626f.exe /implib:cmTC_f626f.lib /pdb:cmTC_f626f.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console rt.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_f626f.dir/intermediate.manifest CMakeFiles\\cmTC_f626f.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: cannot open file 'rt.lib'\x0d
-        ninja: build stopped: subcommand failed.
-        
-      exitCode: 1
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckIncludeFile.cmake:90 (try_compile)"
-      - "CMakeLists.txt:522 (check_include_file)"
-    checks:
-      - "Looking for dlfcn.h"
-    directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-9p8xqz"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-9p8xqz"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
-      CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
-    buildResult:
-      variable: "HAVE_DLFCN_H"
-      cached: true
-      stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-9p8xqz'
-        
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_62dab
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_62dab.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_62dab.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-9p8xqz\\CheckIncludeFile.c
-        FAILED: CMakeFiles/cmTC_62dab.dir/CheckIncludeFile.c.obj 
-        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_62dab.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_62dab.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-9p8xqz\\CheckIncludeFile.c
-        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-9p8xqz\\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'dlfcn.h': No such file or directory
-        ninja: build stopped: subcommand failed.
-        
-      exitCode: 1
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckLibraryExists.cmake:69 (try_compile)"
-      - "CMakeLists.txt:523 (check_library_exists)"
-    checks:
-      - "Looking for dlopen in dl"
-    directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-px4t87"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-px4t87"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
-      CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
-    buildResult:
-      variable: "HAVE_LIBDL"
-      cached: true
-      stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-px4t87'
-        
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_51f9f
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=dlopen /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_51f9f.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_51f9f.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-px4t87\\CheckFunctionExists.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_51f9f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_51f9f.dir\\CheckFunctionExists.c.obj  /out:cmTC_51f9f.exe /implib:cmTC_51f9f.lib /pdb:cmTC_51f9f.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  dl.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_51f9f.exe 
-        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_51f9f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_51f9f.dir\\CheckFunctionExists.c.obj  /out:cmTC_51f9f.exe /implib:cmTC_51f9f.lib /pdb:cmTC_51f9f.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  dl.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_51f9f.dir\\CheckFunctionExists.c.obj /out:cmTC_51f9f.exe /implib:cmTC_51f9f.lib /pdb:cmTC_51f9f.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console dl.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_51f9f.dir/intermediate.manifest CMakeFiles\\cmTC_51f9f.dir/manifest.res" failed (exit code 1104) with the following output:
-        LINK : fatal error LNK1104: cannot open file 'dl.lib'\x0d
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -625,8 +569,8 @@ events:
     checks:
       - "Performing Test HAVE_CPUID_INTRINSIC"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ki9c3y"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ki9c3y"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-7tlfsx"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-7tlfsx"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -634,11 +578,11 @@ events:
       variable: "HAVE_CPUID_INTRINSIC"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ki9c3y'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-7tlfsx'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_921e5
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo -DHAVE_CPUID_INTRINSIC  /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_921e5.dir\\src.c.obj /FdCMakeFiles\\cmTC_921e5.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-ki9c3y\\src.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_921e5.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_921e5.dir\\src.c.obj  /out:cmTC_921e5.exe /implib:cmTC_921e5.lib /pdb:cmTC_921e5.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_d3698
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo -DHAVE_CPUID_INTRINSIC  /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_d3698.dir\\src.c.obj /FdCMakeFiles\\cmTC_d3698.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-7tlfsx\\src.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_d3698.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_d3698.dir\\src.c.obj  /out:cmTC_d3698.exe /implib:cmTC_d3698.lib /pdb:cmTC_d3698.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -650,8 +594,8 @@ events:
     checks:
       - "Looking for posix_memalign"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-cs1x5p"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-cs1x5p"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jw4m66"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jw4m66"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -659,13 +603,13 @@ events:
       variable: "HAVE_POSIX_MEMALIGN"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-cs1x5p'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-jw4m66'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_79920
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_79920.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_79920.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-cs1x5p\\CheckSymbolExists.c
-        FAILED: CMakeFiles/cmTC_79920.dir/CheckSymbolExists.c.obj 
-        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_79920.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_79920.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-cs1x5p\\CheckSymbolExists.c
-        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-cs1x5p\\CheckSymbolExists.c(8): error C2065: 'posix_memalign': undeclared identifier
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_fc6f5
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_fc6f5.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_fc6f5.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-jw4m66\\CheckSymbolExists.c
+        FAILED: CMakeFiles/cmTC_fc6f5.dir/CheckSymbolExists.c.obj 
+        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_fc6f5.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_fc6f5.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-jw4m66\\CheckSymbolExists.c
+        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-jw4m66\\CheckSymbolExists.c(8): error C2065: 'posix_memalign': undeclared identifier
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -678,8 +622,8 @@ events:
     checks:
       - "Looking for _aligned_malloc"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-n1re6f"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-n1re6f"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-8iuv6s"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-8iuv6s"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -687,11 +631,11 @@ events:
       variable: "HAVE__ALIGNED_MALLOC"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-n1re6f'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-8iuv6s'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_d90a9
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_d90a9.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_d90a9.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-n1re6f\\CheckSymbolExists.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_d90a9.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_d90a9.dir\\CheckSymbolExists.c.obj  /out:cmTC_d90a9.exe /implib:cmTC_d90a9.lib /pdb:cmTC_d90a9.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_ee5eb
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_ee5eb.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_ee5eb.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-8iuv6s\\CheckSymbolExists.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_ee5eb.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_ee5eb.dir\\CheckSymbolExists.c.obj  /out:cmTC_ee5eb.exe /implib:cmTC_ee5eb.lib /pdb:cmTC_ee5eb.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -703,8 +647,8 @@ events:
     checks:
       - "Looking for proc_pidpath"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-79ylog"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-79ylog"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-o1qjdx"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-o1qjdx"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -712,13 +656,13 @@ events:
       variable: "HAVE_PROC_PIDPATH"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-79ylog'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-o1qjdx'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_de654
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_de654.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_de654.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-79ylog\\CheckSymbolExists.c
-        FAILED: CMakeFiles/cmTC_de654.dir/CheckSymbolExists.c.obj 
-        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_de654.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_de654.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-79ylog\\CheckSymbolExists.c
-        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-79ylog\\CheckSymbolExists.c(2): fatal error C1083: Cannot open include file: 'libproc.h': No such file or directory
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_3274f
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_3274f.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_3274f.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-o1qjdx\\CheckSymbolExists.c
+        FAILED: CMakeFiles/cmTC_3274f.dir/CheckSymbolExists.c.obj 
+        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_3274f.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_3274f.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-o1qjdx\\CheckSymbolExists.c
+        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-o1qjdx\\CheckSymbolExists.c(2): fatal error C1083: Cannot open include file: 'libproc.h': No such file or directory
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -731,8 +675,8 @@ events:
     checks:
       - "Looking for getopt"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-gvydpk"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-gvydpk"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-aglwrt"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-aglwrt"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -740,13 +684,13 @@ events:
       variable: "HAVE_GETOPT"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-gvydpk'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-aglwrt'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_08fc7
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_08fc7.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_08fc7.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-gvydpk\\CheckSymbolExists.c
-        FAILED: CMakeFiles/cmTC_08fc7.dir/CheckSymbolExists.c.obj 
-        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_08fc7.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_08fc7.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-gvydpk\\CheckSymbolExists.c
-        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-gvydpk\\CheckSymbolExists.c(2): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_f7552
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_f7552.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_f7552.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-aglwrt\\CheckSymbolExists.c
+        FAILED: CMakeFiles/cmTC_f7552.dir/CheckSymbolExists.c.obj 
+        C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_f7552.dir\\CheckSymbolExists.c.obj /FdCMakeFiles\\cmTC_f7552.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-aglwrt\\CheckSymbolExists.c
+        D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-aglwrt\\CheckSymbolExists.c(2): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -758,8 +702,8 @@ events:
     checks:
       - "Looking for dsound.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-z1573i"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-z1573i"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-op652x"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-op652x"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -767,11 +711,11 @@ events:
       variable: "HAVE_DSOUND_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-z1573i'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-op652x'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_ddcdd
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_ddcdd.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_ddcdd.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-z1573i\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_ddcdd.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_ddcdd.dir\\CheckIncludeFile.c.obj  /out:cmTC_ddcdd.exe /implib:cmTC_ddcdd.lib /pdb:cmTC_ddcdd.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_92cda
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_92cda.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_92cda.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-op652x\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_92cda.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_92cda.dir\\CheckIncludeFile.c.obj  /out:cmTC_92cda.exe /implib:cmTC_92cda.lib /pdb:cmTC_92cda.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -782,8 +726,8 @@ events:
     checks:
       - "Looking for mmdeviceapi.h"
     directories:
-      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-efq3oz"
-      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-efq3oz"
+      source: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ktixh7"
+      binary: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ktixh7"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_MODULE_PATH: "D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/cmake"
@@ -791,11 +735,11 @@ events:
       variable: "HAVE_MMDEVICEAPI_H"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-efq3oz'
+        Change Dir: 'D:/Projects/GENFrameWork/ThirdPartyLibraries/openal-soft/Platforms/Windows/x32/CMakeFiles/CMakeScratch/TryCompile-ktixh7'
         
-        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_b5a14
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_b5a14.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_b5a14.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-efq3oz\\CheckIncludeFile.c
-        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_b5a14.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_b5a14.dir\\CheckIncludeFile.c.obj  /out:cmTC_b5a14.exe /implib:cmTC_b5a14.lib /pdb:cmTC_b5a14.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/Ninja/ninja.exe -v cmTC_f6d0a
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_f6d0a.dir\\CheckIncludeFile.c.obj /FdCMakeFiles\\cmTC_f6d0a.dir\\ /FS -c D:\\Projects\\GENFrameWork\\ThirdPartyLibraries\\openal-soft\\Platforms\\Windows\\x32\\CMakeFiles\\CMakeScratch\\TryCompile-ktixh7\\CheckIncludeFile.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f6d0a.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\ENTERP~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\link.exe /nologo CMakeFiles\\cmTC_f6d0a.dir\\CheckIncludeFile.c.obj  /out:cmTC_f6d0a.exe /implib:cmTC_f6d0a.lib /pdb:cmTC_f6d0a.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
 ...

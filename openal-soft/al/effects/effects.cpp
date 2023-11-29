@@ -1,4 +1,4 @@
-#include "config.h"
+#include "alsnd_config.h"
 
 #ifdef ALSOFT_EAX
 

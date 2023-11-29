@@ -1,5 +1,5 @@
 
-#include "config.h"
+#include "alsnd_config.h"
 
 #include "bformatdec.h"
 #include "bs2b.h"

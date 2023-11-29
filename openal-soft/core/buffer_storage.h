@@ -2,8 +2,8 @@
 #define CORE_BUFFER_STORAGE_H
 
 #include <atomic>
+#include <cstddef>
 
-#include "albyte.h"
 #include "alnumeric.h"
 #include "alspan.h"
 #include "ambidefs.h"
@@ -15,6 +15,7 @@ using uint = unsigned int;
 enum FmtType : unsigned char {
     FmtUByte,
     FmtShort,
+    FmtInt,
     FmtFloat,
     FmtDouble,
     FmtMulaw,
@@ -85,7 +86,7 @@ struct BufferStorage {
     CallbackType mCallback{nullptr};
     void *mUserData{nullptr};
 
-    al::span<al::byte> mData;
+    al::span<std::byte> mData;
 
     uint mSampleRate{0u};
     FmtChannels mChannels{FmtMono};

@@ -656,7 +656,7 @@ get_gai_errstring(char *errbuf, int errbuflen, const char *prefix, int err,
 #ifdef EAI_PROTOCOL
 		case EAI_PROTOCOL:
 			snprintf(errbuf, errbuflen,
-			    "%sResolved protocol when looking up %s is unknown",
+			    "%s protocol when looking up %s is unknown",
 			    prefix, hostport);
 			break;
 #endif

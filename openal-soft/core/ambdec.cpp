@@ -1,5 +1,5 @@
 
-#include "config.h"
+#include "alsnd_config.h"
 
 #include "ambdec.h"
 
@@ -47,9 +47,9 @@ enum class ReaderScope {
 #else
 [[gnu::format(printf,2,3)]]
 #endif
-al::optional<std::string> make_error(size_t linenum, const char *fmt, ...)
+std::optional<std::string> make_error(size_t linenum, const char *fmt, ...)
 {
-    al::optional<std::string> ret;
+    std::optional<std::string> ret;
     auto &str = ret.emplace();
 
     str.resize(256);
@@ -77,7 +77,7 @@ al::optional<std::string> make_error(size_t linenum, const char *fmt, ...)
 AmbDecConf::~AmbDecConf() = default;
 
 
-al::optional<std::string> AmbDecConf::load(const char *fname) noexcept
+std::optional<std::string> AmbDecConf::load(const char *fname) noexcept
 {
     al::ifstream f{fname};
     if(!f.is_open())
@@ -126,7 +126,7 @@ al::optional<std::string> AmbDecConf::load(const char *fname) noexcept
         }
         else if(scope == ReaderScope::LFMatrix || scope == ReaderScope::HFMatrix)
         {
-            auto &gains = (scope == ReaderScope::LFMatrix) ? LFOrderGain : HFOrderGain;
+            //auto &gains = (scope == ReaderScope::LFMatrix) ? LFOrderGain : HFOrderGain;
             auto *matrix = (scope == ReaderScope::LFMatrix) ? LFMatrix : HFMatrix;
             auto &pos = (scope == ReaderScope::LFMatrix) ? lfmatrix_pos : hfmatrix_pos;
 
@@ -139,8 +139,18 @@ al::optional<std::string> AmbDecConf::load(const char *fname) noexcept
                 {
                     --toread;
                     istr >> value;
-                    if(curgain < al::size(gains))
-                        gains[curgain++] = value;
+
+                    if(scope == ReaderScope::LFMatrix)
+                      {
+                        if(curgain < std::size(LFOrderGain))
+                          LFOrderGain[curgain++] = value;
+                      }
+                     else
+                      {
+                        if(curgain < std::size(HFOrderGain))
+                          HFOrderGain[curgain++] = value;
+                      } 
+
                 }
             }
             else if(command == "add_row")
@@ -291,7 +301,7 @@ al::optional<std::string> AmbDecConf::load(const char *fname) noexcept
             if(CoeffScale == AmbDecScale::Unset)
                 return make_error(linenum, "No coefficient scaling defined");
 
-            return al::nullopt;
+            return std::nullopt;
         }
         else
             return make_error(linenum, "Unexpected command: %s", command.c_str());

@@ -30,7 +30,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "config.h"
+#include "alsnd_config.h"
 
 #include <array>
 #include <cstdlib>

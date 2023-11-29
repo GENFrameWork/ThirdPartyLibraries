@@ -26,7 +26,7 @@
         SOFTWARE.
 ***/
 
-#include "config.h"
+#include "alsnd_config.h"
 
 #include "rtkit.h"
 

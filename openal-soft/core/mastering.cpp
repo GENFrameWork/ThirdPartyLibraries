@@ -1,5 +1,5 @@
 
-#include "config.h"
+#include "alsnd_config.h"
 
 #include "mastering.h"
 
@@ -382,10 +382,10 @@ std::unique_ptr<Compressor> Compressor::Create(const size_t NumChans, const floa
 Compressor::~Compressor()
 {
     if(mHold)
-        al::destroy_at(mHold);
+        std::destroy_at(mHold);
     mHold = nullptr;
     if(mDelay)
-        al::destroy_n(mDelay, mNumChans);
+        std::destroy_n(mDelay, mNumChans);
     mDelay = nullptr;
 }
 

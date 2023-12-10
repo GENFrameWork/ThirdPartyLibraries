@@ -1332,7 +1332,7 @@ HrtfStorePtr GetLoadedHrtf(const std::string &name, const uint devrate)
     char magic[sizeof(magicMarker03)];
     stream->read(magic, sizeof(magic));
     if(stream->gcount() < static_cast<std::streamsize>(sizeof(magicMarker03)))
-        ERR("%s data is too short (%zu bytes)\n", name.c_str(), stream->gcount());
+        ERR("%s data is too short (%zu bytes)\n", name.c_str(), (size_t)stream->gcount());
     else if(memcmp(magic, magicMarker03, sizeof(magicMarker03)) == 0)
     {
         TRACE("Detected data set format v3\n");
